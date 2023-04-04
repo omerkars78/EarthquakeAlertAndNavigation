@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mobileapp.MobileAppPluginTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-26T13:00:28" hostname="LAPTOP-OONDKQQ2" time="2.802">
+  <properties/>
+  <testcase name="pluginRegistersATask()" classname="mobileapp.MobileAppPluginTest" time="2.802"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

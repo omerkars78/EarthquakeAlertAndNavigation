@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mobileapp.MobileAppPluginFunctionalTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-26T13:09:16" hostname="LAPTOP-OONDKQQ2" time="6.825">
+  <properties/>
+  <testcase name="canRunTask()" classname="mobileapp.MobileAppPluginFunctionalTest" time="6.825"/>
+  <system-out><![CDATA[
+> Task :greeting
+Hello from plugin 'mobileapp.greeting'
+
+BUİLD SUCCESSFUL in 5s
+1 actionable task: 1 executed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
