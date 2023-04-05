@@ -9,152 +9,152 @@
 9        android:targetSdkVersion="31" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:5:5-78
-11-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:5:22-75
+11-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:5:5-78
+11-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:5:22-75
 12
 13    <!-- Start bluetooth permissions -->
 14    <uses-permission
-14-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:7:3-66
+14-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:7:3-66
 15        android:name="android.permission.BLUETOOTH"
-15-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:7:20-63
+15-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:7:20-63
 16        android:maxSdkVersion="30"
-16-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-35
+16-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-35
 17        android:required="true" />
-17-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:9:66-89
+17-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:9:66-89
 18    <uses-permission
-18-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:8:3-72
+18-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:8:3-72
 19        android:name="android.permission.BLUETOOTH_ADMIN"
-19-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:8:20-69
+19-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:8:20-69
 20        android:maxSdkVersion="30"
-20-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-35
+20-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-35
 21        android:required="true" />
-21-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:10:72-95
+21-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:10:72-95
 22
 23    <uses-permission-sdk-23
-23-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:9:3-84
+23-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:9:3-84
 24        android:name="android.permission.ACCESS_FINE_LOCATION"
-24-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:9:27-81
+24-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:9:27-81
 25        android:required="true" />
-25-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:12:9-32
+25-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:12:9-32
 26
 27    <uses-permission
-27-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:13:5-14:35
+27-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:13:5-14:35
 28        android:name="android.permission.ACCESS_COARSE_LOCATION"
-28-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:13:22-78
+28-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:13:22-78
 29        android:required="true" />
-29-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:14:9-32
+29-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:14:9-32
 30
 31    <!--
 32    Add this line if your application always requires BLE. More info can be found on:
 33    https://developer.android.com/guide/topics/connectivity/bluetooth-le.html#permissions
 34    -->
 35    <uses-feature
-35-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:3-88
+35-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:3-88
 36        android:name="android.hardware.bluetooth_le"
-36-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:17-61
+36-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:17-61
 37        android:required="true" />
-37-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:62-85
+37-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:62-85
 38
 39    <uses-permission android:name="android.permission.INTERNET" />
-39-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:4:3-65
-39-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:4:20-62
+39-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:4:3-65
+39-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:4:20-62
 40    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 40-->[com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
 40-->[com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
 41    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-41-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-73
-41-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-70
+41-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-73
+41-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-70
 42    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- Communicating with the Kontakt.io Proximity REST API -->
-42-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-76
-42-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:22-73
+42-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-76
+42-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:22-73
 43    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
 44    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to access Google Play Licensing -->
-44-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-79
-44-->[:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:22-76
+44-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-79
+44-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:22-76
 45    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-45-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-73
-45-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-70
+45-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-73
+45-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-70
 46    <!--
 47         Required to keep CPU alive while downloading files
 48        (NOT to keep screen awake)
 49    -->
 50    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required to read and write the expansion files on shared storage -->
-50-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-68
-50-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-65
+50-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-68
+50-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-65
 51    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-51-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
-51-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:22-78
+51-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
+51-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:22-78
 52
 53    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- End bluetooth permissions -->
 53-->[com.github.Polidea:MultiPlatformBleAdapter:b0272c0fae040cc90f790481c54e8f2d45304339] C:\Users\omer2\.gradle\caches\transforms-3\7069bcd898fd65da75150f23da103d27\transformed\jetified-MultiPlatformBleAdapter-b0272c0fae040cc90f790481c54e8f2d45304339\AndroidManifest.xml:14:5-88
 53-->[com.github.Polidea:MultiPlatformBleAdapter:b0272c0fae040cc90f790481c54e8f2d45304339] C:\Users\omer2\.gradle\caches\transforms-3\7069bcd898fd65da75150f23da103d27\transformed\jetified-MultiPlatformBleAdapter-b0272c0fae040cc90f790481c54e8f2d45304339\AndroidManifest.xml:14:29-85
 54    <application
-54-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:14:3-33:17
+54-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:14:3-33:17
 55        android:name="com.mobileapp.MainApplication"
-55-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:15:5-36
+55-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:15:5-36
 56        android:allowBackup="false"
-56-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:19:5-32
+56-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:19:5-32
 57        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 57-->[androidx.core:core:1.7.0] C:\Users\omer2\.gradle\caches\transforms-3\63a3df243d2d102452600006144a86df\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 58        android:debuggable="true"
 59        android:icon="@mipmap/ic_launcher"
-59-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:17:5-39
+59-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:17:5-39
 60        android:label="@string/app_name"
-60-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:16:5-37
+60-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:16:5-37
 61        android:roundIcon="@mipmap/ic_launcher_round"
-61-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:18:5-50
+61-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:18:5-50
 62        android:theme="@style/AppTheme"
-62-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:20:5-36
+62-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:20:5-36
 63        android:usesCleartextTraffic="true" >
-63-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:24:9-44
+63-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:24:9-44
 64        <activity
-64-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:27:9-28:40
+64-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:27:9-28:40
 65            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-65-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:27:19-83
+65-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:27:19-83
 66            android:exported="false" />
-66-->C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:28:13-37
+66-->C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:28:13-37
 67        <activity
-67-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:21:5-32:16
+67-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:21:5-32:16
 68            android:name="com.mobileapp.MainActivity"
-68-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:22:7-35
+68-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:22:7-35
 69            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-69-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:24:7-116
+69-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:24:7-116
 70            android:exported="true"
-70-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:27:7-30
+70-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:27:7-30
 71            android:label="@string/app_name"
-71-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:23:7-39
+71-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:23:7-39
 72            android:launchMode="singleTask"
-72-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:25:7-38
+72-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:25:7-38
 73            android:windowSoftInputMode="adjustResize" >
-73-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:26:7-49
+73-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:26:7-49
 74            <intent-filter>
-74-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:28:7-31:23
+74-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:28:7-31:23
 75                <action android:name="android.intent.action.MAIN" />
-75-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:29:9-61
-75-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:29:17-58
+75-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:29:9-61
+75-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:29:17-58
 76
 77                <category android:name="android.intent.category.LAUNCHER" />
-77-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:30:9-69
-77-->C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:30:19-66
+77-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:30:9-69
+77-->C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:30:19-66
 78            </intent-filter>
 79        </activity>
 80
 81        <provider
-81-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-42:20
+81-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-42:20
 82            android:name="com.RNFetchBlob.Utils.FileProvider"
-82-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-62
+82-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-62
 83            android:authorities="com.mobileapp.provider"
-83-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-60
+83-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-60
 84            android:exported="false"
-84-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-37
+84-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-37
 85            android:grantUriPermissions="true" >
-85-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-47
+85-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-47
 86            <meta-data
-86-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:39:13-41:58
+86-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:39:13-41:58
 87                android:name="android.support.FILE_PROVIDER_PATHS"
-87-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:40:17-67
+87-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:40:17-67
 88                android:resource="@xml/provider_paths" />
-88-->[:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:41:17-55
+88-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:41:17-55
 89        </provider>
 90        <provider
 90-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20

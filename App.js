@@ -75,7 +75,7 @@
 
 // export default App;
 
-import React from 'react';
+import React ,{useContext}from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -140,7 +140,7 @@ function RotaBulScreen() {
   );
 }
 
-function AcilÇıkışScreen() {
+function AcilCikisScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Acil Çıkış Screen</Text>
@@ -163,7 +163,7 @@ function App() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="RotaBul" component={RotaBulScreen} />
-          <Stack.Screen name="AcilÇıkış" component={AcilÇıkışScreen} />
+          <Stack.Screen name="AcilÇıkış" component={AcilCikisScreen} />
           <Stack.Screen name="Deprem" component={DepremScreen} />
         </Stack.Navigator>
       </NavigationContainer>
@@ -172,3 +172,26 @@ function App() {
 }
 
 export default App;
+
+
+
+// *********************** SOCKET.IO NOTİFİCATİONS ***********************
+// import { useEffect } from 'react';
+// import io from 'socket.io-client';
+
+// const App = () => {
+//   useEffect(() => {
+//     const socket = io('http://192.168.1.53:5000');
+
+//     socket.on('new_signal', (data) => {
+//       console.log('New signal received:', data);
+//       // Show notification here
+//     });
+
+//     return () => {
+//       socket.disconnect();
+//     };
+//   }, []);
+
+//   // ... (existing component code)
+// };

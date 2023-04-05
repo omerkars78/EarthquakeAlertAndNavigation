@@ -1,19 +1,19 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:1-34:12
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:1-34:12
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:1-34:12
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:1-34:12
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:1-34:12
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:1-34:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\e32b7eeb3398efff4e100fae60e161ae\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\d00cb5af49214c127447117a850c65b4\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
-MERGED from [:react-native-picker_picker] C:\NavigationAndEarthQuakeAlert\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-ble-plx] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-12:12
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-31:12
-MERGED from [:react-native-sqlite-storage] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-vector-icons] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-45:12
+MERGED from [:react-native-picker_picker] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-ble-plx] C:\EarthquakeAlertAndNavigation\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-12:12
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-31:12
+MERGED from [:react-native-sqlite-storage] C:\EarthquakeAlertAndNavigation\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-vector-icons] C:\EarthquakeAlertAndNavigation\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-45:12
 MERGED from [com.facebook.react:react-native:0.70.6] C:\Users\omer2\.gradle\caches\transforms-3\0b825f9a3cd84cf1738e48fbfed11fea\transformed\jetified-react-native-0.70.6-debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\4aa3daa4c119e5ebf154ad11d072f485\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.react:hermes-engine:0.70.6] C:\Users\omer2\.gradle\caches\transforms-3\9d7eb90167c45c49ac02b1539a4fe443\transformed\jetified-hermes-engine-0.70.6-debug\AndroidManifest.xml:2:1-9:12
@@ -70,96 +70,96 @@ MERGED from [com.facebook.fresco:fbcore:2.6.0] C:\Users\omer2\.gradle\caches\tra
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] C:\Users\omer2\.gradle\caches\transforms-3\aaa1dc5f754bb41dda256e1351c8bd3c\transformed\jetified-rxandroid-2.1.1\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\omer2\.gradle\caches\transforms-3\54294f5f857978835a11e24fc1422778\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.artemzin.rxjava:proguard-rules:1.3.3.0] C:\Users\omer2\.gradle\caches\transforms-3\74dcb7562900e7156235619dcce165fa\transformed\jetified-proguard-rules-1.3.3.0\AndroidManifest.xml:2:1-10:12
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:2:1-30:12
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:2:1-30:12
 	package
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:2:3-26
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:2:3-26
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:2:3-26
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:2:3-26
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:1-34:12
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:3:5-51
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:1-34:12
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:1-34:12
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:4:3-65
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:4:3-65
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:15:5-67
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-67
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-67
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-67
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-67
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:5-67
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-67
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:4:20-62
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:4:20-62
 uses-permission#android.permission.BLUETOOTH
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:7:3-66
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:7:3-66
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:7:3-66
-MERGED from [:react-native-ble-plx] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-68
-MERGED from [:react-native-ble-plx] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-68
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-18:38
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-18:38
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:7:3-66
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:7:3-66
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:7:3-66
+MERGED from [:react-native-ble-plx] C:\EarthquakeAlertAndNavigation\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-68
+MERGED from [:react-native-ble-plx] C:\EarthquakeAlertAndNavigation\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-68
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-18:38
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:5-18:38
 MERGED from [com.github.Polidea:MultiPlatformBleAdapter:b0272c0fae040cc90f790481c54e8f2d45304339] C:\Users\omer2\.gradle\caches\transforms-3\7069bcd898fd65da75150f23da103d27\transformed\jetified-MultiPlatformBleAdapter-b0272c0fae040cc90f790481c54e8f2d45304339\AndroidManifest.xml:11:5-68
 MERGED from [com.github.Polidea:MultiPlatformBleAdapter:b0272c0fae040cc90f790481c54e8f2d45304339] C:\Users\omer2\.gradle\caches\transforms-3\7069bcd898fd65da75150f23da103d27\transformed\jetified-MultiPlatformBleAdapter-b0272c0fae040cc90f790481c54e8f2d45304339\AndroidManifest.xml:11:5-68
 MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.1] C:\Users\omer2\.gradle\caches\transforms-3\8b2a33fe43318fb420037a7f41801d36\transformed\jetified-rxandroidble-1.7.1\AndroidManifest.xml:11:5-68
 MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.1] C:\Users\omer2\.gradle\caches\transforms-3\8b2a33fe43318fb420037a7f41801d36\transformed\jetified-rxandroidble-1.7.1\AndroidManifest.xml:11:5-68
 	android:maxSdkVersion
-		ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-35
+		ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-35
 	android:required
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:9:66-89
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:9:66-89
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:7:20-63
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:7:20-63
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:8:3-72
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:8:3-72
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:8:3-72
-MERGED from [:react-native-ble-plx] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-74
-MERGED from [:react-native-ble-plx] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-74
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:5-24:38
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:5-24:38
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:8:3-72
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:8:3-72
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:8:3-72
+MERGED from [:react-native-ble-plx] C:\EarthquakeAlertAndNavigation\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-74
+MERGED from [:react-native-ble-plx] C:\EarthquakeAlertAndNavigation\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-74
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:5-24:38
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:22:5-24:38
 MERGED from [com.github.Polidea:MultiPlatformBleAdapter:b0272c0fae040cc90f790481c54e8f2d45304339] C:\Users\omer2\.gradle\caches\transforms-3\7069bcd898fd65da75150f23da103d27\transformed\jetified-MultiPlatformBleAdapter-b0272c0fae040cc90f790481c54e8f2d45304339\AndroidManifest.xml:12:5-74
 MERGED from [com.github.Polidea:MultiPlatformBleAdapter:b0272c0fae040cc90f790481c54e8f2d45304339] C:\Users\omer2\.gradle\caches\transforms-3\7069bcd898fd65da75150f23da103d27\transformed\jetified-MultiPlatformBleAdapter-b0272c0fae040cc90f790481c54e8f2d45304339\AndroidManifest.xml:12:5-74
 MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.1] C:\Users\omer2\.gradle\caches\transforms-3\8b2a33fe43318fb420037a7f41801d36\transformed\jetified-rxandroidble-1.7.1\AndroidManifest.xml:12:5-74
 MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.1] C:\Users\omer2\.gradle\caches\transforms-3\8b2a33fe43318fb420037a7f41801d36\transformed\jetified-rxandroidble-1.7.1\AndroidManifest.xml:12:5-74
 	android:maxSdkVersion
-		ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-35
+		ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-35
 	android:required
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:10:72-95
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:10:72-95
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:8:20-69
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:8:20-69
 uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:9:3-84
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:9:3-84
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:9:3-84
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:9:3-84
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:9:3-84
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:9:3-84
 MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.1] C:\Users\omer2\.gradle\caches\transforms-3\8b2a33fe43318fb420037a7f41801d36\transformed\jetified-rxandroidble-1.7.1\AndroidManifest.xml:15:5-86
 MERGED from [com.polidea.rxandroidble:rxandroidble:1.7.1] C:\Users\omer2\.gradle\caches\transforms-3\8b2a33fe43318fb420037a7f41801d36\transformed\jetified-rxandroidble-1.7.1\AndroidManifest.xml:15:5-86
 	android:required
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:12:9-32
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:12:9-32
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:9:27-81
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:9:27-81
 uses-feature#android.hardware.bluetooth_le
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:3-88
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:3-88
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:3-88
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:3-88
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:3-88
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:3-88
 	android:required
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:62-85
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:62-85
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:10:17-61
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:10:17-61
 application
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:14:3-33:17
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:14:3-33:17
-MERGED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:14:3-33:17
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:5-43:19
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:5-43:19
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:14:3-33:17
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:14:3-33:17
+MERGED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:14:3-33:17
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:5-43:19
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:33:5-43:19
 MERGED from [com.facebook.react:react-native:0.70.6] C:\Users\omer2\.gradle\caches\transforms-3\0b825f9a3cd84cf1738e48fbfed11fea\transformed\jetified-react-native-0.70.6-debug\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.react:react-native:0.70.6] C:\Users\omer2\.gradle\caches\transforms-3\0b825f9a3cd84cf1738e48fbfed11fea\transformed\jetified-react-native-0.70.6-debug\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.4] C:\Users\omer2\.gradle\caches\transforms-3\87826452408345e9fcde9828ee0fb34c\transformed\jetified-soloader-0.10.4\AndroidManifest.xml:11:5-20
@@ -179,75 +179,75 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\omer2\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\omer2\.gradle\caches\transforms-3\63a3df243d2d102452600006144a86df\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:16:5-37
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:16:5-37
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:16:5-37
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:16:5-37
 	tools:ignore
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:26:9-48
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:26:9-48
 	android:roundIcon
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:18:5-50
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:18:5-50
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:18:5-50
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:18:5-50
 	tools:targetApi
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:25:9-29
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:25:9-29
 	android:icon
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:17:5-39
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:17:5-39
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:17:5-39
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:17:5-39
 	android:allowBackup
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:19:5-32
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:19:5-32
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:19:5-32
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:19:5-32
 	android:theme
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:20:5-36
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:20:5-36
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:20:5-36
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:20:5-36
 	android:usesCleartextTraffic
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:24:9-44
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:24:9-44
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:15:5-36
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:15:5-36
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:15:5-36
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:15:5-36
 activity#com.mobileapp.MainActivity
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:21:5-32:16
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:21:5-32:16
 	android:label
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:23:7-39
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:23:7-39
 	android:launchMode
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:25:7-38
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:25:7-38
 	android:windowSoftInputMode
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:26:7-49
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:26:7-49
 	android:exported
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:27:7-30
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:27:7-30
 	android:configChanges
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:24:7-116
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:24:7-116
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:22:7-35
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:22:7-35
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:28:7-31:23
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:28:7-31:23
 action#android.intent.action.MAIN
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:29:9-61
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:29:9-61
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:29:17-58
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:29:17-58
 category#android.intent.category.LAUNCHER
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:30:9-69
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:30:9-69
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml:30:19-66
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml:30:19-66
 uses-sdk
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\e32b7eeb3398efff4e100fae60e161ae\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\e32b7eeb3398efff4e100fae60e161ae\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\d00cb5af49214c127447117a850c65b4\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\d00cb5af49214c127447117a850c65b4\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
-MERGED from [:react-native-picker_picker] C:\NavigationAndEarthQuakeAlert\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-picker_picker] C:\NavigationAndEarthQuakeAlert\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-ble-plx] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-ble-plx] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-12:41
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-12:41
-MERGED from [:react-native-sqlite-storage] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-sqlite-storage] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-vector-icons] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-vector-icons] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-ble-plx] C:\EarthquakeAlertAndNavigation\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-ble-plx] C:\EarthquakeAlertAndNavigation\node_modules\react-native-ble-plx\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-12:41
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-12:41
+MERGED from [:react-native-sqlite-storage] C:\EarthquakeAlertAndNavigation\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-sqlite-storage] C:\EarthquakeAlertAndNavigation\node_modules\react-native-sqlite-storage\platforms\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\EarthquakeAlertAndNavigation\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] C:\EarthquakeAlertAndNavigation\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.70.6] C:\Users\omer2\.gradle\caches\transforms-3\0b825f9a3cd84cf1738e48fbfed11fea\transformed\jetified-react-native-0.70.6-debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.70.6] C:\Users\omer2\.gradle\caches\transforms-3\0b825f9a3cd84cf1738e48fbfed11fea\transformed\jetified-react-native-0.70.6-debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\4aa3daa4c119e5ebf154ad11d072f485\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
@@ -360,80 +360,80 @@ MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\omer2\.
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\omer2\.gradle\caches\transforms-3\54294f5f857978835a11e24fc1422778\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.artemzin.rxjava:proguard-rules:1.3.3.0] C:\Users\omer2\.gradle\caches\transforms-3\74dcb7562900e7156235619dcce165fa\transformed\jetified-proguard-rules-1.3.3.0\AndroidManifest.xml:8:5-43
 MERGED from [com.artemzin.rxjava:proguard-rules:1.3.3.0] C:\Users\omer2\.gradle\caches\transforms-3\74dcb7562900e7156235619dcce165fa\transformed\jetified-proguard-rules-1.3.3.0\AndroidManifest.xml:8:5-43
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:5:5-78
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:5:5-78
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:5:22-75
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:5:22-75
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:13:5-14:35
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:5-81
-MERGED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:5-81
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:13:5-14:35
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:5-81
+MERGED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:29:5-81
 	android:required
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:14:9-32
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:14:9-32
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:13:22-78
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:13:22-78
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:27:9-28:40
+ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:27:9-28:40
 	android:exported
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:28:13-37
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from C:\NavigationAndEarthQuakeAlert\android\app\src\debug\AndroidManifest.xml:27:19-83
+		ADDED from C:\EarthquakeAlertAndNavigation\android\app\src\debug\AndroidManifest.xml:27:19-83
 uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:5-76
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:5-76
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:5-76
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:28:5-76
 	android:name
 		ADDED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
 uses-permission#android.permission.BLUETOOTH_SCAN
-ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-73
+ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-73
 	android:name
-		ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-70
+		ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-70
 uses-permission#android.permission.BLUETOOTH_CONNECT
-ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-76
+ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-76
 	android:name
-		ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:22-73
+		ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-79
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:5-79
-MERGED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:5-79
+ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-79
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:5-79
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:5-79
 	android:name
-		ADDED from [:react-native-kontaktio] C:\NavigationAndEarthQuakeAlert\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:22-76
+		ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:22-76
 uses-permission#com.android.vending.CHECK_LICENSE
-ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-73
+ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-73
 	android:name
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-70
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-70
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-68
+ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-68
 	android:name
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-65
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-65
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
+ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
 	android:name
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:22-78
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:22-78
 provider#com.RNFetchBlob.Utils.FileProvider
-ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-42:20
+ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-42:20
 	android:grantUriPermissions
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-47
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-47
 	android:authorities
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-60
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-60
 	android:exported
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-37
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-62
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:39:13-41:58
+ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:39:13-41:58
 	android:resource
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:41:17-55
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:41:17-55
 	android:name
-		ADDED from [:rn-fetch-blob] C:\NavigationAndEarthQuakeAlert\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:40:17-67
+		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:40:17-67
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\omer2\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20
