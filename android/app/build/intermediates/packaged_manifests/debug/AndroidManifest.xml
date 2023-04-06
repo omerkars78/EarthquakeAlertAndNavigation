@@ -79,6 +79,15 @@
         </activity>
 
         <provider
+            android:name="com.imagepicker.ImagePickerProvider"
+            android:authorities="com.mobileapp.imagepickerprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/imagepicker_provider_paths" />
+        </provider>
+        <provider
             android:name="com.RNFetchBlob.Utils.FileProvider"
             android:authorities="com.mobileapp.provider"
             android:exported="false"

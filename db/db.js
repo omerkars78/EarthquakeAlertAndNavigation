@@ -5,6 +5,9 @@ class Db {
       name: 'beacon3.db',
       location: 'default',
     });
+    this.createMainRoutesTable();
+    this.createRoutesTable();
+    this.createImagesTable();
   }
 
   getDb() {
@@ -25,6 +28,19 @@ class Db {
       });
     });
   }
+
+  createImagesTable() {
+    const query = `CREATE TABLE IF NOT EXISTS images(
+            id INTEGER PRIMARY KEY NOT NULL,
+            imageURI TEXT NOT NULL
+        );`;
+    this.Db.transaction(function (txn) {
+      txn.executeSql(query, [], function (tx, res) {
+        console.log('Images table created successfully');
+      });
+    });
+  }
+
 
   createRoutesTable() {
     const query = `CREATE TABLE IF NOT EXISTS routes(
@@ -63,6 +79,17 @@ class Db {
     });
   }
 
+  // fotoğraf yüklenirken kullanılacak
+  addImage(imageURI) {
+    const query = `INSERT INTO images (imageURI) VALUES (?);`;
+    this.Db.transaction(function (txn) {
+      txn.executeSql(query, [imageURI], function (tx, res) {
+        console.log(`Image added successfully, ID: ${res.insertId}`);
+      });
+    });
+  }
+
+    
   addRoute(
     mainRouteId,
     curMajor,

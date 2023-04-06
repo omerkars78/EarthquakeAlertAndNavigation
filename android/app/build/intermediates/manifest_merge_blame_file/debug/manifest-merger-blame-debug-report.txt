@@ -140,43 +140,60 @@
 79        </activity>
 80
 81        <provider
-81-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-42:20
-82            android:name="com.RNFetchBlob.Utils.FileProvider"
-82-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-62
-83            android:authorities="com.mobileapp.provider"
-83-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-60
+81-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+82            android:name="com.imagepicker.ImagePickerProvider"
+82-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-63
+83            android:authorities="com.mobileapp.imagepickerprovider"
+83-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-71
 84            android:exported="false"
-84-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-37
+84-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
 85            android:grantUriPermissions="true" >
-85-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-47
+85-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
 86            <meta-data
-86-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:39:13-41:58
+86-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
 87                android:name="android.support.FILE_PROVIDER_PATHS"
-87-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:40:17-67
-88                android:resource="@xml/provider_paths" />
-88-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:41:17-55
+87-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+88                android:resource="@xml/imagepicker_provider_paths" />
+88-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
 89        </provider>
 90        <provider
-90-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-91            android:name="androidx.startup.InitializationProvider"
-91-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-92            android:authorities="com.mobileapp.androidx-startup"
-92-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-93            android:exported="false" >
-93-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-94            <meta-data
-94-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-95                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-95-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-96                android:value="androidx.startup" />
-96-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-97            <meta-data
-97-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\omer2\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-98                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-98-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\omer2\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-99                android:value="androidx.startup" />
-99-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\omer2\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-100        </provider>
-101    </application>
-102
-103</manifest>
+90-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-42:20
+91            android:name="com.RNFetchBlob.Utils.FileProvider"
+91-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-62
+92            android:authorities="com.mobileapp.provider"
+92-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-60
+93            android:exported="false"
+93-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-37
+94            android:grantUriPermissions="true" >
+94-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-47
+95            <meta-data
+95-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:70
+96                android:name="android.support.FILE_PROVIDER_PATHS"
+96-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+97                android:resource="@xml/provider_paths" />
+97-->[:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
+98        </provider>
+99        <provider
+99-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+100            android:name="androidx.startup.InitializationProvider"
+100-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+101            android:authorities="com.mobileapp.androidx-startup"
+101-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+102            android:exported="false" >
+102-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+103            <meta-data
+103-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+104                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+104-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+105                android:value="androidx.startup" />
+105-->[androidx.emoji2:emoji2:1.0.0] C:\Users\omer2\.gradle\caches\transforms-3\b6fe4da57007a43d86a66ba4c66459bd\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+106            <meta-data
+106-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\omer2\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+107                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+107-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\omer2\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+108                android:value="androidx.startup" />
+108-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\omer2\.gradle\caches\transforms-3\bc74a39e1ea23fea00bfcf2682a93948\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+109        </provider>
+110    </application>
+111
+112</manifest>

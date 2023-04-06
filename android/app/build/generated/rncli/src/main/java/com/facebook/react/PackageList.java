@@ -11,12 +11,20 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
+// @react-native-community/datetimepicker
+import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 // @react-native-picker/picker
 import com.reactnativecommunity.picker.RNCPickerPackage;
 // react-native-ble-plx
 import com.polidea.reactnativeble.BlePackage;
+// react-native-image-picker
+import com.imagepicker.ImagePickerPackage;
 // react-native-kontaktio
 import com.artirigo.kontaktio.KontaktPackage;
+// react-native-safe-area-context
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+// react-native-screens
+import com.swmansion.rnscreens.RNScreensPackage;
 // react-native-sqlite-storage
 import org.pgsqlite.SQLitePluginPackage;
 // react-native-vector-icons
@@ -68,9 +76,13 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new RNDateTimePickerPackage(),
       new RNCPickerPackage(),
       new BlePackage(),
+      new ImagePickerPackage(),
       new KontaktPackage(),
+      new SafeAreaContextPackage(),
+      new RNScreensPackage(),
       new SQLitePluginPackage(),
       new VectorIconsPackage(),
       new RNFetchBlobPackage()
