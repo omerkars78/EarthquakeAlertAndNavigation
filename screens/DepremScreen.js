@@ -10,29 +10,28 @@ import {
   FlatList,
 } from 'react-native';
 import {launchImageLibrary} from 'react-native-image-picker';
+// import ImagePicker from 'react-native-image-crop-picker';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
 function DepremScreen() {
   const [image, setImage] = useState(null);
-  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
-  const [dateTime, setDateTime] = useState(null);
+  const [isStartTimePickerVisible, setStartTimePickerVisibility] =
+    useState(false);
+  const [isEndTimePickerVisible, setEndTimePickerVisibility] = useState(false);
+  const [startTime, setStartTime] = useState(null);
+  const [endTime, setEndTime] = useState(null);
   const [dateTimeRangesWithImages, setDateTimeRangesWithImages] = useState([]);
 
   const db = new Db();
 
-  // Son seçilen resmi yükleme
   useEffect(() => {
-    const loadLastImage = async () => {
-      const lastImageUri = await db.getLastImage();
-      if (lastImageUri) {
-        setImage(lastImageUri);
-      }
+    const loadAllDateTimeRangesWithImages = async () => {
+      const allDateTimeRangesWithImages = await db.getAllTimeRangesWithImages();
+      setDateTimeRangesWithImages(allDateTimeRangesWithImages);
     };
-    loadLastImage();
+    loadAllDateTimeRangesWithImages();
   }, []);
 
-  // Fotoğraf seçme işlemi
   const pickImage = async () => {
     try {
       const granted = await PermissionsAndroid.request(
@@ -56,8 +55,6 @@ function DepremScreen() {
           if (!response.didCancel && !response.error) {
             const imageUri = response.assets[0].uri;
             setImage(imageUri);
-            const db = new Db();
-            db.addImage(imageUri);
           }
         });
       } else {
@@ -68,64 +65,56 @@ function DepremScreen() {
     }
   };
 
-  // Tarih seçiciyi göster
-  const showDatePicker = () => {
-    setDatePickerVisibility(true);
+  const showStartTimePicker = () => {
+    setStartTimePickerVisibility(true);
   };
 
-  // Tarih seçiciyi gizle
-  const hideDatePicker = () => {
-    setDatePickerVisibility(false);
+  const hideStartTimePicker = () => {
+    setStartTimePickerVisibility(false);
   };
 
-  // Tarih seçildiğinde çalışacak fonksiyon
-  const handleDateConfirm = date => {
-    console.log('A date has been picked: ', date);
-    setDateTime(date);
-    hideDatePicker();
+  const handleStartTimeConfirm = time => {
+    const newStartTime = new Date();
+    newStartTime.setHours(time.getHours());
+    newStartTime.setMinutes(time.getMinutes());
+    setStartTime(newStartTime);
+    hideStartTimePicker();
   };
 
-  // Saat seçiciyi göster
-  const showTimePicker = () => {
-    setTimePickerVisibility(true);
+  const showEndTimePicker = () => {
+    setEndTimePickerVisibility(true);
   };
 
-  // Saat seçiciyi gizle
-  const hideTimePicker = () => {
-    setTimePickerVisibility(false);
+  const hideEndTimePicker = () => {
+    setEndTimePickerVisibility(false);
   };
 
-  // Saat seçildiğinde çalışacak fonksiyon
-  const handleTimeConfirm = time => {
-    if (dateTime) {
-      const newDateTime = new Date(dateTime);
-      newDateTime.setHours(time.getHours());
-      newDateTime.setMinutes(time.getMinutes());
-      setDateTime(newDateTime);
-    }
-    hideTimePicker();
+  const handleEndTimeConfirm = time => {
+    const newEndTime = new Date();
+    newEndTime.setHours(time.getHours());
+    newEndTime.setMinutes(time.getMinutes());
+    setEndTime(newEndTime);
+    hideEndTimePicker();
   };
 
-  // Tarih, saat ve resim seçildiğinde veritabanına kaydetme işlemi
   const addDateTimeRangeWithImage = async () => {
-    if (image && dateTime) {
-      const endTime = new Date(dateTime);
-      endTime.setMinutes(dateTime.getMinutes() + 30); // 30 dakika sonrasını varsayılan olarak bitiş zamanı olarak ayarladık
-      await db.addTimeRangeWithImage(dateTime, endTime, image);
+    if (image && startTime && endTime) {
+      await db.addTimeRangeWithImage(startTime, endTime, image);
       const newItem = {
-        startTime: dateTime,
+        startTime: startTime,
         endTime: endTime,
         imageURI: image,
       };
 
       setDateTimeRangesWithImages([...dateTimeRangesWithImages, newItem]);
       setImage(null);
+      setStartTime(null);
+      setEndTime(null);
     } else {
-      alert('Lütfen tarih, saat ve fotoğraf seçiniz.');
+      alert('Lütfen başlangıç saati, bitiş saati ve fotoğraf seçiniz.');
     }
   };
 
-  // İlişkili fotoğraf ve zaman aralığını silme işlemi
   const deleteItem = async item => {
     await db.deleteTimeRangeWithImage(item.startTime, item.imageURI);
     setDateTimeRangesWithImages(
@@ -134,30 +123,21 @@ function DepremScreen() {
       ),
     );
   };
-
-  // Liste öğelerini göstermek için kullanılacak fonksiyon
   const renderItem = ({item}) => {
     return (
-      <View style={styles.listItem}>
-        <View>
-          <Text>
-            {new Date(item.startTime).toLocaleString()} -{' '}
-            {new Date(item.endTime).toLocaleString()}
-          </Text>
-          <Image
-            source={{uri: item.imageURI}}
-            style={{
-              width: 100,
-              height: 100,
-              resizeMode: 'cover',
-              marginTop: 10,
-            }}
-          />
-        </View>
+      <View style={styles.item_container}>
+        <Text style={styles.item_text}>
+          Başlangıç: {item.startTime.toLocaleTimeString()} - Bitiş:{' '}
+          {item.endTime.toLocaleTimeString()}
+        </Text>
+        <Image
+          source={{uri: `file://${item.imageURI}`}}
+          style={styles.item_image}
+        />
         <TouchableOpacity
-          style={styles.deleteButton}
+          style={styles.delete_button}
           onPress={() => deleteItem(item)}>
-          <Text>Sil</Text>
+          <Text style={styles.delete_text}>Sil</Text>
         </TouchableOpacity>
       </View>
     );
@@ -169,29 +149,30 @@ function DepremScreen() {
       <TouchableOpacity style={styles.button} onPress={pickImage}>
         <Text>Fotoğraf Yükle</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={showDatePicker}>
-        <Text>Tarih Seç</Text>
+      <TouchableOpacity style={styles.button} onPress={showStartTimePicker}>
+        <Text>Başlangıç Saati Seç</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={showTimePicker}>
-        <Text>Saat Seç</Text>
+      <TouchableOpacity style={styles.button} onPress={showEndTimePicker}>
+        <Text>Bitiş Saati Seç</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.button}
+        style={styles.button_yukle}
         onPress={addDateTimeRangeWithImage}>
-        <Text>Zaman Aralığı ve Fotoğraf Ekle</Text>
+        <Text style={styles.button_yukle}>Hayat Üçgeni Ekle</Text>
       </TouchableOpacity>
       <DateTimePickerModal
-        isVisible={isDatePickerVisible}
-        mode="date"
-        onConfirm={handleDateConfirm}
-        onCancel={hideDatePicker}
+        isVisible={isStartTimePickerVisible}
+        mode="time"
+        onConfirm={handleStartTimeConfirm}
+        onCancel={hideStartTimePicker}
       />
       <DateTimePickerModal
-        isVisible={isTimePickerVisible}
+        isVisible={isEndTimePickerVisible}
         mode="time"
-        onConfirm={handleTimeConfirm}
-        onCancel={hideTimePicker}
+        onConfirm={handleEndTimeConfirm}
+        onCancel={hideEndTimePicker}
       />
+      {!image && <Text>Fotoğraf seçilmedi.</Text>}
       {image && (
         <Image
           source={{uri: image}}
@@ -219,6 +200,34 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginBottom: 10,
   },
+  item_container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
+    marginBottom: 20,
+    width: '100%',
+  },
+  item_text: {
+    flex: 1,
+    marginRight: 10,
+  },
+  item_image: {
+    width: 100,
+    height: 100,
+    resizeMode: 'cover',
+    marginRight: 10,
+  },
+  button_yukle: {
+    backgroundColor: '#ff0000',
+    padding: 5,
+    borderRadius: 5,
+    marginBottom: 5,
+    color: '#ffffff',
+    fontWeight: 'bold',
+  },
   listItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -227,11 +236,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderWidth: 1,
     borderColor: '#ccc',
+    width: '100%',
   },
   deleteButton: {
     backgroundColor: 'red',
     padding: 10,
     borderRadius: 5,
+  },
+  deleteButtonText: {
+    color: 'white',
+  },
+  listItemContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 

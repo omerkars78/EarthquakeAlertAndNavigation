@@ -352,6 +352,36 @@ class Db {
     });
   }
 
+  // En Son Eklenen Zaman Aralığı Ve Resmi Almak İçin Bir Metod
+  async getLastTimeRangeWithImage() {
+    return new Promise((resolve, reject) => {
+      this.Db.transaction(tx => {
+        const query = `
+          SELECT time_ranges.start_time, images.imageURI
+          FROM time_ranges
+          INNER JOIN images ON time_ranges.image_id = images.id
+          ORDER BY time_ranges.id DESC
+          LIMIT 1;
+        `;
+        tx.executeSql(
+          query,
+          [],
+          (tx, results) => {
+            if (results.rows.length > 0) {
+              const {start_time, imageURI} = results.rows.item(0);
+              resolve({startTime: start_time, imageURI: imageURI});
+            } else {
+              resolve(null);
+            }
+          },
+          (tx, error) => {
+            console.log('Error fetching last time range with image:', error);
+            reject(error);
+          },
+        );
+      });
+    });
+  }
 
 }
 
