@@ -116,7 +116,7 @@ function DepremScreen() {
   };
 
   const deleteItem = async item => {
-    await db.deleteTimeRangeWithImage(item.startTime, item.imageURI);
+    await db.deleteTimeRangeWithImage(item.startTime, item.endTime,item.imageURI);
     setDateTimeRangesWithImages(
       dateTimeRangesWithImages.filter(
         dateTimeRange => dateTimeRange.startTime !== item.startTime,
@@ -130,15 +130,17 @@ function DepremScreen() {
           Başlangıç: {item.startTime.toLocaleTimeString()} - Bitiş:{' '}
           {item.endTime.toLocaleTimeString()}
         </Text>
-        <Image
-          source={{uri: `file://${item.imageURI}`}}
-          style={styles.item_image}
-        />
-        <TouchableOpacity
-          style={styles.delete_button}
-          onPress={() => deleteItem(item)}>
-          <Text style={styles.delete_text}>Sil</Text>
-        </TouchableOpacity>
+        <View style={styles.item_details_container}>
+          <Image
+            source={{uri: `file://${item.imageURI}`}}
+            style={styles.item_image}
+          />
+          <TouchableOpacity
+            style={styles.delete_button}
+            onPress={() => deleteItem(item)}>
+            <Text style={styles.delete_text}>Sil</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   };
@@ -199,9 +201,8 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
-  },
-  item_container: {
-    flexDirection: 'row',
+  },item_container: {
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderWidth: 1,
@@ -210,9 +211,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: '100%',
   },
+  item_details_container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    width: '100%',
+    marginTop: 10,
+  },
   item_text: {
-    flex: 1,
-    marginRight: 10,
+    alignSelf: 'flex-start',
+    marginBottom: 10,
   },
   item_image: {
     width: 100,
@@ -250,7 +258,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+  },delete_button: {
+    backgroundColor: 'red',
+    padding: 5,
+    borderRadius: 5,
   },
+  delete_text: {
+    color: 'white',
+  }
 });
 
 export default DepremScreen;

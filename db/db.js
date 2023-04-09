@@ -311,7 +311,22 @@ class Db {
       });
     });
   }
-
+  // Zaman Aralığı ve İlişkili Fotoğrafı Silen Metod
+  deleteTimeRangeWithImage(startTime, endTime, imageURI) {
+    const deleteTimeRangeQuery = `DELETE FROM time_ranges WHERE start_time = ? AND end_time = ?;`;
+    const deleteImageQuery = `DELETE FROM images WHERE imageURI = ?;`;
+  
+    this.Db.transaction(function (txn) {
+      txn.executeSql(deleteTimeRangeQuery, [startTime, endTime], function (tx, res) {
+        console.log('Time range deleted successfully');
+        txn.executeSql(deleteImageQuery, [imageURI], function (tx, res) {
+          console.log('Image deleted successfully');
+        });
+      });
+    });
+  }
+  
+  
   // Fotoğraf Silmek İçin Gereken Metod
   async deleteImage(imageURI) {
     return new Promise((resolve, reject) => {
