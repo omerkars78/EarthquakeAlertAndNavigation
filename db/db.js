@@ -398,6 +398,63 @@ class Db {
     });
   }
 
+  // Saat aralığına uyan kaydı bulan metod
+async findMatchingTimeRange(start_time, end_time) {
+  return new Promise((resolve, reject) => {
+    this.Db.transaction(tx => {
+      const query = `
+        SELECT * FROM time_ranges
+        WHERE start_time <= ? AND end_time >= ?;
+      `;
+      tx.executeSql(
+        query,
+        [start_time, end_time],
+        (tx, results) => {
+          if (results.rows.length > 0) {
+            resolve(results.rows.item(0));
+          } else {
+            resolve(null);
+          }
+        },
+        (tx, error) => {
+          console.log('Error fetching matching time range:', error);
+          reject(error);
+        },
+      );
+    });
+  });
+}
+
+// İlişkili fotoğraf verisini almak için güncellenen metod
+async getImageForTimeRange(timeRangeId) {
+  return new Promise((resolve, reject) => {
+    this.Db.transaction(tx => {
+      const query = `
+        SELECT images.imageURI
+        FROM time_ranges
+        INNER JOIN images ON time_ranges.image_id = images.id
+        WHERE time_ranges.id = ?;
+      `;
+      tx.executeSql(
+        query,
+        [timeRangeId],
+        (tx, results) => {
+          if (results.rows.length > 0) {
+            const {imageURI} = results.rows.item(0);
+            resolve(imageURI);
+          } else {
+            resolve(null);
+          }
+        },
+        (tx, error) => {
+          console.log('Error fetching image for time range:', error);
+          reject(error);
+        },
+      );
+    });
+  });
+}
+
 }
 
 module.exports = Db;

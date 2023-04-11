@@ -23,6 +23,8 @@ import com.polidea.reactnativeble.BlePackage;
 import com.imagepicker.ImagePickerPackage;
 // react-native-kontaktio
 import com.artirigo.kontaktio.KontaktPackage;
+// react-native-push-notification
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
@@ -84,6 +86,7 @@ public class PackageList {
       new BlePackage(),
       new ImagePickerPackage(),
       new KontaktPackage(),
+      new ReactNativePushNotificationPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new SQLitePluginPackage(),
