@@ -5,8 +5,6 @@ import Circle from '../components/Circle';
 import SelectMenu from '../components/SelectMenu';
 import Button from '../components/Button';
 import GlobalProvider , {GlobalSelectContext} from '../Context/GlobalState';
-
-
 function AcilCikisScreen() {
   return (
     <GlobalProvider>
@@ -14,7 +12,6 @@ function AcilCikisScreen() {
     </GlobalProvider>
   );
 }
-
 function AppContent() {
   const {bgColor} = useContext(GlobalSelectContext);
   const styles = StyleSheet.create({
@@ -61,7 +58,6 @@ function AppContent() {
       alignItems: 'center',
     },
   });
-
   return (
     <View style={styles.container}>
       <View style={styles.girisWrapper}>
@@ -73,5 +69,4 @@ function AppContent() {
     </View>
   );
 }
-
 export default AcilCikisScreen;

@@ -27,17 +27,17 @@ function HomeScreen({navigation}) {
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('RotaBul')}>
-            <Text style={styles.buttonText}>Rota Bul</Text>
+            <Text style={styles.buttonText}>Bina İçi Yönlendirme</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('AcilÇıkış')}>
-            <Text style={styles.buttonText}>Acil Çıkış</Text>
+            <Text style={styles.buttonText}>Acil Çıkış Rotası Bul</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('Deprem')}>
-            <Text style={styles.buttonText}>Deprem</Text>
+            <Text style={styles.buttonText}>Hayat Üçgeni Oluştur</Text>
           </TouchableOpacity>
         </View>
       );

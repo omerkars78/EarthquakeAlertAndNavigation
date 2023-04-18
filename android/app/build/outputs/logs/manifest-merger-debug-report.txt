@@ -9,6 +9,7 @@ MERGED from [com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\e32b7eeb3398efff4e100fae60e161ae\transformed\jetified-flipper-network-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\d00cb5af49214c127447117a850c65b4\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:react-native-fs] C:\EarthquakeAlertAndNavigation\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-async-storage_async-storage] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_datetimepicker] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-picker_picker] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-picker\picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -312,6 +313,8 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\omer2\
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\d00cb5af49214c127447117a850c65b4\transformed\jetified-flipper-fresco-plugin-0.125.0\AndroidManifest.xml:11:5-13:41
 MERGED from [:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fs] C:\EarthquakeAlertAndNavigation\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fs] C:\EarthquakeAlertAndNavigation\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-async-storage_async-storage] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-async-storage_async-storage] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-async-storage\async-storage\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_datetimepicker] C:\EarthquakeAlertAndNavigation\node_modules\@react-native-community\datetimepicker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -554,6 +557,12 @@ ADDED from [:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_mod
 		ADDED from [:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-67
 	android:name
 		ADDED from [:react-native-image-picker] C:\EarthquakeAlertAndNavigation\node_modules\react-native-image-picker\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:react-native-fs] C:\EarthquakeAlertAndNavigation\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
+MERGED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
+	android:name
+		ADDED from [:react-native-fs] C:\EarthquakeAlertAndNavigation\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
 uses-permission#android.permission.BLUETOOTH_SCAN
 ADDED from [:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-73
 	android:name
@@ -594,10 +603,6 @@ MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] C:\Use
 MERGED from [com.google.android.gms:play-services-cloud-messaging:16.0.0] C:\Users\omer2\.gradle\caches\transforms-3\c209fb4fe4c5a5d32efd3eedc775c11b\transformed\jetified-play-services-cloud-messaging-16.0.0\AndroidManifest.xml:9:5-68
 	android:name
 		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-65
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
-	android:name
-		ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:22-78
 provider#com.RNFetchBlob.Utils.FileProvider
 ADDED from [:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-42:20
 	android:grantUriPermissions

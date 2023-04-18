@@ -61,29 +61,29 @@
 40    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 40-->[com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
 40-->[com.facebook.flipper:flipper:0.125.0] C:\Users\omer2\.gradle\caches\transforms-3\03f04a3f11198ce3b7c6cedb9b41266b\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
-41    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
-41-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-73
-41-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-70
-42    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- Communicating with the Kontakt.io Proximity REST API -->
-42-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-76
-42-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:22-73
-43    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
-44    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to access Google Play Licensing -->
-44-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-79
-44-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:22-76
-45    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
-45-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-73
-45-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-70
-46    <!--
-47         Required to keep CPU alive while downloading files
-48        (NOT to keep screen awake)
-49    -->
-50    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required to read and write the expansion files on shared storage -->
-50-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-68
-50-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-65
-51    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-51-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:5-81
-51-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:31:22-78
+41    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+41-->[:react-native-fs] C:\EarthquakeAlertAndNavigation\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+41-->[:react-native-fs] C:\EarthquakeAlertAndNavigation\node_modules\react-native-fs\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+42    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+42-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-73
+42-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-70
+43    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- Communicating with the Kontakt.io Proximity REST API -->
+43-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:5-76
+43-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:22-73
+44    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+45    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Required to access Google Play Licensing -->
+45-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:5-79
+45-->[:react-native-kontaktio] C:\EarthquakeAlertAndNavigation\node_modules\react-native-kontaktio\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:22-76
+46    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+46-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-73
+46-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-70
+47    <!--
+48         Required to keep CPU alive while downloading files
+49        (NOT to keep screen awake)
+50    -->
+51    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+51-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:5-68
+51-->[:rn-fetch-blob] C:\EarthquakeAlertAndNavigation\node_modules\rn-fetch-blob\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:22-65
 52    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 52-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\omer2\.gradle\caches\transforms-3\e147adcc8c5a99fe69cfa4593737deac\transformed\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:25:5-82
 52-->[com.google.firebase:firebase-messaging:21.1.0] C:\Users\omer2\.gradle\caches\transforms-3\e147adcc8c5a99fe69cfa4593737deac\transformed\jetified-firebase-messaging-21.1.0\AndroidManifest.xml:25:22-79

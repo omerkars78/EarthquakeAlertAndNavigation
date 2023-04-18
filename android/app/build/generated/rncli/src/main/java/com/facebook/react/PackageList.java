@@ -19,6 +19,8 @@ import com.reactcommunity.rndatetimepicker.RNDateTimePickerPackage;
 import com.reactnativecommunity.picker.RNCPickerPackage;
 // react-native-ble-plx
 import com.polidea.reactnativeble.BlePackage;
+// react-native-fs
+import com.rnfs.RNFSPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
 // react-native-kontaktio
@@ -84,6 +86,7 @@ public class PackageList {
       new RNDateTimePickerPackage(),
       new RNCPickerPackage(),
       new BlePackage(),
+      new RNFSPackage(),
       new ImagePickerPackage(),
       new KontaktPackage(),
       new ReactNativePushNotificationPackage(),

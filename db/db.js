@@ -1,30 +1,135 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {openDatabase} from 'react-native-sqlite-storage';
+import RNFS from 'react-native-fs';
+import {Platform} from 'react-native';
+
 
 class Db {
   constructor() {
     this.Db = openDatabase({
-      name: 'beacon3.db',
+      name: 'beacon4.db',
       location: 'default',
     });
-    this.init();
+    this.createCheckTable();
+    this.addCheckValue(); // Uygulama ilk çalıştığında checkValue değerini 0 olarak oluşturur
+    this.checking();
   }
-
-  getDb() {
-    return console.log(this.Db);
-  }
-  // Başlangıçta Çalışması Gereken Metodlar başlangıçta çalıştıktan sonra bir daha çalışmazlar ve veritabanı oluşturulur
-  async init() {
-    const isInitialized = await AsyncStorage.getItem('isDbInitialized');
-
-    if (!isInitialized) {
+  
+  async checking(){
+    let DefaultData = await this.getDefaultCheckValue();
+    if(DefaultData == 0){
       this.createMainRoutesTable();
       this.createRoutesTable();
-      this.createImagesTable();
-      this.createTimeRangesTable();
-      AsyncStorage.setItem('isDbInitialized', 'true');
+      this.importCsvData('mainRoutes.csv', 'mainRoutes');
+      this.importCsvData('routes.csv', 'routes');
+      this.updateCheckValue();
     }
   }
+
+  async importCsvData(csvFileName, tableName) {
+    const assetPath = Platform.select({
+      ios: `${RNFS.MainBundlePath}/${csvFileName}`,
+      android: `${RNFS.DocumentDirectoryPath}/${csvFileName}`,
+    });
+
+    try {
+      await RNFS.copyFileAssets(csvFileName, assetPath);
+      const data = await RNFS.readFile(assetPath, 'utf8');
+      const records = data.trim().split('\n');
+      const headers = records[0].split(',');
+
+      // Remove the header row
+      records.shift();
+
+      for (const record of records) {
+        const fields = record.split(',');
+        const fieldData = {};
+
+        fields.forEach((field, index) => {
+          fieldData[headers[index]] = field;
+        });
+
+        await this.insertData(tableName, fieldData);
+      }
+    } catch (error) {
+      console.error('Error importing CSV data:', error);
+    }
+  }
+
+  insertData(tableName, fieldData) {
+    const fields = Object.keys(fieldData).join(', ');
+    const values = Object.values(fieldData)
+      .map(value => `'${value}'`)
+      .join(', ');
+    const query = `INSERT INTO ${tableName} (${fields}) VALUES (${values});`;
+
+    return new Promise((resolve, reject) => {
+      this.Db.transaction(txn => {
+        txn.executeSql(
+          query,
+          [],
+          (tx, res) => {
+            console.log(
+              `Data inserted into ${tableName} successfully, ID: ${res.insertId}`,
+            );
+            resolve();
+          },
+          (tx, error) => {
+            console.log(
+              `Error inserting data into ${tableName}:`,
+              error.message,
+            );
+            reject();
+          },
+        );
+      });
+    });
+  }
+    // En başta 0 olarak oluşturulan default değeri işlem sonunda 1 yapmamızı sağlayacak metod
+    updateCheckValue() {
+      const query = `UPDATE checkTable SET checkValue = 1`;
+      this.Db.transaction(function (txn) {
+        txn.executeSql(query, [], function (tx, res) {
+          console.log('Check value updated successfully');
+        });
+      });
+    }
+    // CheckValue değerini kontrol etmemizi sağlayacak metod
+  async getDefaultCheckValue() {
+    const query = 'SELECT checkValue FROM checkTable;';
+    return new Promise((resolve, reject) => {
+      this.Db.transaction(function (txn) {
+        txn.executeSql(query, [], function (tx, res) {
+          if (res.rows.length > 0) {
+            const checkValue = res.rows.item(0).checkValue;
+            resolve(checkValue);
+            console.log(checkValue);
+          } else {
+            console.log('No data to display 1 ');
+          }
+        });
+      });
+    });
+  }
+    // Uygulama İlk Çalıştığında Default Verileri Eklemeden Önce Kontrol Yapmamızı Sağlayacak Tablo
+    createCheckTable() {
+      const query = `CREATE TABLE IF NOT EXISTS checkTable(
+        checkValue INTEGER DEFAULT 0
+    )`;
+      this.Db.transaction(function (txn) {
+        txn.executeSql(query, [], function (tx, res) {
+          console.log('Check table created successfully');
+        });
+      });
+    }
+    // ChechkValue değerine 0 değerini eklememizi sağlayacak metod
+    addCheckValue() {
+      const query = `INSERT INTO checkTable (checkValue) VALUES (0)`; // 0 değerini default olarak eklemek için DEFAULT kullanıldı
+      this.Db.transaction(function (txn) {
+        txn.executeSql(query, [], function (tx, res) {
+          console.log('Check value added successfully');
+        });
+      })
+    }
 
   //****************************  BİNA İÇİ YÖNLENDİRME VE ACİL ÇIKIŞ İÇİN **************************************************//
 

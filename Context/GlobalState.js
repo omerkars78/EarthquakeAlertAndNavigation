@@ -4,28 +4,68 @@ import React, {
   useEffect,
   useCallback,
   useRef,
-  Alert,
-} from 'react';
+  } from 'react';
+import {Alert,PermissionsAndroid} from 'react-native';
 import {BleManager} from 'react-native-ble-plx';
 import RNFetchBlob from 'rn-fetch-blob';
 import {stringToBytes} from 'convert-string';
 import Db from '../db/db.js';
 
+
+
+async function requestBluetoothPermission() {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      {
+        title: 'Bluetooth Erişim İzni',
+        message: 'Uygulama, Bluetooth özelliğini kullanmak için izin gerektirir.',
+        buttonNegative: 'İptal',
+        buttonPositive: 'Tamam',
+      },
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log('Bluetooth erişim izni verildi.');
+    } else {
+      console.log('Bluetooth erişim izni reddedildi.');
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+}
+
 const manager = new BleManager();
 const defaultDeviceName = 'POI';
 const defaultDeviceRssi = -1;
-const db = new Db();
+const dbInstance = new Db();
+
+
+// Bluetooh İzinleri Kontrol Ederiz
+// Bluetooth İzinleri Kontrol Ediyoruz
+manager.onStateChange(async (state) => {
+  if (state === 'PoweredOn') {
+    console.log('Bluetooth açık.');
+
+    // Veritabanındaki check değerini alıyoruz
+    const checkValue = await dbInstance.getDefaultCheckValue();
+
+    // Eğer check değeri 0 ise, Bluetooth izni istiyoruz
+    if (checkValue === 0) {
+      requestBluetoothPermission();
+    }
+  } else {
+    console.log('Bluetooth kapalı.');
+    requestBluetoothPermission();
+  }
+}, true);
+
 
 export const GlobalSelectContext = createContext();
 
 export const department = [
-  {name: 'Please Select', major: 0, minor: 0},
-  {name: 'Cardiology', major: '1', minor: '15'},
-  {name: 'Dermatology', major: 1, minor: 37},
-  {name: 'ENT', major: 1, minor: 38},
-  {name: 'Internal Medicine', major: 1, minor: 39},
-  {name: 'Endocrinology', major: 1, minor: 49},
-  {name: 'General Surgery', major: '1', minor: '67'},
+  {name: 'Lütfen varış Yeri Seçiniz', major: '0', minor: '0'},
+  {name: 'Vahap Tecim', major: '4', minor: '102'},
+  {name: 'Ybs Sekreterlik', major: '4', minor: '103'},
 ];
 
 export const arrow = [
@@ -35,10 +75,13 @@ export const arrow = [
   {name: 'arrow-right'},
   {name: 'arrow-down'},
   {name: 'x'},
+  {name: 'fold-up'},
+  {name: 'fold-down'},
 ];
 
 export const GlobalProvider = props => {
-  const [bgColor, setBgColor] = useState('#0000ff');
+  const [bgColor, setBgColor] = useState('#ff7800');
+  // const [bgColor, setBgColor] = useState('#0000ff');
   const [selected, setSelected] = useState(department[0]);
   const [selectedArrow, setSelectedArrow] = useState(arrow[0].name);
   const [minRssiDevice, setMinRssiDevice] = useState({
@@ -65,7 +108,8 @@ export const GlobalProvider = props => {
   const intervalIdRef = useRef(null);
   const [isRoutingRunning, setIsRoutingRunning] = useState(false);
 
-  // Yönlendirme için kullanılan fonksiyon
+
+  // Yönlendirme İşlemini Yapıyoruz 
   const routing = useCallback(() => {
     setIsRoutingRunning(true);
     for (const element of matchedDataRef.current) {
@@ -77,7 +121,7 @@ export const GlobalProvider = props => {
         setText(element.nextText);
         setSelectedArrow(element.nextDirection);
         setBgColor('blue');
-
+  
         if (
           element.finishMajor.toString() === minRssiDevice.major.toString() &&
           element.finishMinor.toString() === minRssiDevice.minor.toString()
@@ -91,13 +135,14 @@ export const GlobalProvider = props => {
       }
     }
   }, [minRssiDevice]);
-
+  
+ 
   // Hedefe ulaştıktan sonra 3 saniye bekleyip uygulamayı yeniden başlatan useEffect
   useEffect(() => {
     if (setText === 'Hedefe Ulaştınız' || bgColor === '#00c957') {
       setTimeout(() => {
         setRestartApp(true);
-      }, 1000);
+      }, 3000);
     }
   });
 
@@ -133,7 +178,7 @@ export const GlobalProvider = props => {
     }
   }, [restartApp, manager, AuthOnPress]);
 
-  // En yakın cihazı bulan fonksiyon
+
   function setBleData(rssi, major, minor) {
     if (
       (minRssiDevice.rssi === 0 ||
@@ -143,18 +188,19 @@ export const GlobalProvider = props => {
       setMinRssiDevice({rssi, major, minor});
     } else if (
       Math.abs(rssi) === Math.abs(minRssiDevice.rssi) &&
-      rssi > minRssiDevice.rssi &&
       rssi > -100
     ) {
       setMinRssiDevice({rssi, major, minor});
     } else if (
-      Math.abs(rssi) < 100 &&
-      Math.abs(rssi) > Math.abs(minRssiDevice.rssi) &&
+      Math.abs(rssi - minRssiDevice.rssi) > 50 &&
+      Math.abs(rssi) < Math.abs(minRssiDevice.rssi) &&
       rssi > -100
     ) {
       setMinRssiDevice({rssi, major, minor});
     }
   }
+  
+
 
   // minRssiDevice güncellendiğinde routing fonksiyonunu çağıran useEffect
   useEffect(() => {
@@ -235,15 +281,15 @@ export const GlobalProvider = props => {
   // Eşleşen verileri getiren fonksiyon
   useEffect(() => {
     async function fetchMatchedData() {
-      if (minRssiDevice.major !== 0 && minRssiDevice.minor !== 0) {
-        const datas = await db.searchMatchedData(
+      
+        const datas = await dbInstance.searchMatchedData(
           startMajor,
           startMinor,
           finishMajor,
           finishMinor,
         );
         setMatchedData(datas);
-      }
+      
     }
     fetchMatchedData();
   }, [minRssiDevice]);
@@ -256,7 +302,7 @@ export const GlobalProvider = props => {
   // Bir yer seçildiğinde o yere gitmemizi sağlayan fonksiyon
   const AuthOnPress = useCallback(() => {
     console.log('AuthOnPress is called');
-    if (isDepartmentSelected) {
+  if (isDepartmentSelected) {
       console.log('AuthOnPress is called koşula giriyor');
       intervalIdRef.current = setInterval(() => {
         scanForDevices();
@@ -270,6 +316,8 @@ export const GlobalProvider = props => {
       alert('Please select a department.');
     } else {
       AuthOnPress();
+      dbInstance.getAllRoutes();
+      dbInstance.getAllMainRoutes();
     }
   }, [isDepartmentSelected, AuthOnPress]);
 
@@ -287,6 +335,7 @@ export const GlobalProvider = props => {
         buttonTextColor: buttonTextColor,
         buttonText: buttonText,
         isRoutingRunning: isRoutingRunning,
+        dbInstance: dbInstance,
         setIsRoutingRunning,
         setSelected,
         AuthOnPress,
@@ -299,6 +348,7 @@ export const GlobalProvider = props => {
         setButtonBgColor,
         setButtonText,
         setButtonTextColor,
+        requestBluetoothPermission
       }}>
       {props.children}
     </GlobalSelectContext.Provider>
