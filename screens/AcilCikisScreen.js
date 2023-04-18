@@ -1,8 +1,7 @@
 import React,{useContext} from 'react';
 import {View,StyleSheet} from 'react-native';
-import Header from '../components/Header';
+import HeaderAcil from '../components/HeaderAcil';
 import Circle from '../components/Circle';
-import SelectMenu from '../components/SelectMenu';
 import Button from '../components/Button';
 import GlobalProvider , {GlobalSelectContext} from '../Context/GlobalState';
 function AcilCikisScreen() {
@@ -61,9 +60,8 @@ function AppContent() {
   return (
     <View style={styles.container}>
       <View style={styles.girisWrapper}>
-        <Header />
+        <HeaderAcil />
         <Circle />
-        <SelectMenu />
         <Button />
       </View>
     </View>
