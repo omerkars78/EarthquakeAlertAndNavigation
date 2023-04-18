@@ -18,7 +18,7 @@ function AppContent() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 30,
+      padding: 40,
       backgroundColor: bgColor
     },
     girisWrapper: {
