@@ -15,8 +15,9 @@ const styles = {
   container: {
     alignItems: 'center',
     backgroundColor: 'white',
-    padding: 10,
+    widht : '100%',
     borderRadius: 10,
+
    
   },
   title: {
