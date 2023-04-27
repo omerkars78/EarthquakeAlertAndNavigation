@@ -74,11 +74,10 @@ function HomeScreen() {
 
           return <IconComponent name={iconName} size={size} color={color} />;
         },
+        headerShown: false,
+        tabBarActiveTintColor: 'blue',
+        tabBarInactiveTintColor: 'gray',
       })}
-      tabBarOptions={{
-        activeTintColor: 'blue',
-        inactiveTintColor: 'gray',
-      }}
     >
       <Tab.Screen name="RotaBul" component={RotaBulScreen} />
       <Tab.Screen name="AcilÇıkış" component={AcilCikisScreen} />

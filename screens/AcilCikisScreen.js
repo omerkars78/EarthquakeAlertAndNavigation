@@ -2,8 +2,8 @@ import React,{useContext} from 'react';
 import {View,StyleSheet} from 'react-native';
 import HeaderAcil from '../components/HeaderAcil';
 import Circle from '../components/Circle';
-import Button from '../components/Button';
 import GlobalProvider , {GlobalSelectContext} from '../Context/GlobalState';
+import ButtonAcilCikis from '../components/ButtonAcilCikis';
 function AcilCikisScreen() {
   return (
     <GlobalProvider>
@@ -62,7 +62,7 @@ function AppContent() {
       <View style={styles.girisWrapper}>
         <HeaderAcil />
         <Circle />
-        <Button />
+        <ButtonAcilCikis />
       </View>
     </View>
   );

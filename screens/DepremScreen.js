@@ -147,20 +147,20 @@ function DepremScreen() {
 
   return (
     <View style={styles.container}>
-      <Text>Deprem Screen</Text>
+      <Text style={styles.headerText}>Hayat Üçgeni Ekle</Text>
       <TouchableOpacity style={styles.button} onPress={pickImage}>
-        <Text>Fotoğraf Yükle</Text>
+        <Text style={styles.buttonText}>Fotoğraf Yükle</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={showStartTimePicker}>
-        <Text>Başlangıç Saati Seç</Text>
+        <Text style={styles.buttonText}>Başlangıç Saati Seç</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={showEndTimePicker}>
-        <Text>Bitiş Saati Seç</Text>
+        <Text style={styles.buttonText}>Bitiş Saati Seç</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.button_yukle}
+        style={styles.button}
         onPress={addDateTimeRangeWithImage}>
-        <Text style={styles.button_yukle}>Hayat Üçgeni Ekle</Text>
+        <Text style={styles.buttonText}>Hayat Üçgeni Ekle</Text>
       </TouchableOpacity>
       <DateTimePickerModal
         isVisible={isStartTimePickerVisible}
@@ -195,13 +195,34 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10,
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
   },
   button: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#FFA07A',
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
-  },item_container: {
+    width: '100%',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  item_container: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -219,7 +240,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   item_text: {
-    alignSelf: 'flex-start',
+    alignSelf:'flex-start',
     marginBottom: 10,
   },
   item_image: {
@@ -228,13 +249,13 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     marginRight: 10,
   },
-  button_yukle: {
-    backgroundColor: '#ff0000',
+  delete_button: {
+    backgroundColor: 'red',
     padding: 5,
     borderRadius: 5,
-    marginBottom: 5,
-    color: '#ffffff',
-    fontWeight: 'bold',
+  },
+  delete_text: {
+    color: 'white',
   },
   listItem: {
     flexDirection: 'row',
@@ -258,14 +279,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-  },delete_button: {
-    backgroundColor: 'red',
-    padding: 5,
-    borderRadius: 5,
   },
-  delete_text: {
-    color: 'white',
-  }
 });
 
 export default DepremScreen;

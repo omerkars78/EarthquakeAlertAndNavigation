@@ -80,8 +80,9 @@ export const arrow = [
 ];
 
 export const GlobalProvider = props => {
-  const [bgColor, setBgColor] = useState('#ff7800');
+  // const [bgColor, setBgColor] = useState('#ff7800');
   // const [bgColor, setBgColor] = useState('#0000ff');
+  const [bgColor, setBgColor] = useState('#9370db');
   const [selected, setSelected] = useState(department[0]);
   const [selectedArrow, setSelectedArrow] = useState(arrow[0].name);
   const [minRssiDevice, setMinRssiDevice] = useState({
@@ -320,6 +321,14 @@ export const GlobalProvider = props => {
       dbInstance.getAllMainRoutes();
     }
   }, [isDepartmentSelected, AuthOnPress]);
+  
+  const handleButtonPressAcil = useCallback(() => {
+
+      // AuthOnPress();
+      dbInstance.getAllRoutes();
+      dbInstance.getAllMainRoutes();
+
+  }, []);
 
   return (
     <GlobalSelectContext.Provider
@@ -348,7 +357,8 @@ export const GlobalProvider = props => {
         setButtonBgColor,
         setButtonText,
         setButtonTextColor,
-        requestBluetoothPermission
+        requestBluetoothPermission,
+        handleButtonPressAcil,
       }}>
       {props.children}
     </GlobalSelectContext.Provider>
