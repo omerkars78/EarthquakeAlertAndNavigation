@@ -11,8 +11,6 @@ import RNFetchBlob from 'rn-fetch-blob';
 import {stringToBytes} from 'convert-string';
 import Db from '../db/db.js';
 
-
-
 async function requestBluetoothPermission() {
   try {
     const granted = await PermissionsAndroid.request(
@@ -96,7 +94,7 @@ export const GlobalProvider = props => {
   let startMinor = String(minRssiDevice.minor);
   let finishMajor = String(selected.major);
   let finishMinor = String(selected.minor);
-  let params = [startMajor, startMinor, finishMajor, finishMinor];
+  // let params = [startMajor, startMinor, finishMajor, finishMinor];
 
   const [buttonText, setButtonText] = useState('Rota Oluştur');
   const [buttonBgColor, setButtonBgColor] = useState('white');
@@ -321,14 +319,7 @@ export const GlobalProvider = props => {
       dbInstance.getAllMainRoutes();
     }
   }, [isDepartmentSelected, AuthOnPress]);
-  
-  const handleButtonPressAcil = useCallback(() => {
 
-      // AuthOnPress();
-      dbInstance.getAllRoutes();
-      dbInstance.getAllMainRoutes();
-
-  }, []);
 
   return (
     <GlobalSelectContext.Provider
@@ -358,7 +349,6 @@ export const GlobalProvider = props => {
         setButtonText,
         setButtonTextColor,
         requestBluetoothPermission,
-        handleButtonPressAcil,
       }}>
       {props.children}
     </GlobalSelectContext.Provider>
