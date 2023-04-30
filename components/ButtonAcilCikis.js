@@ -1,6 +1,6 @@
 import React, {useContext, useState ,useEffect} from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
-import {GlobalSelectContext} from '../Context/GlobalState';
+import {AcilCikisContext} from '../Context/AcilCikisState';
 
 const ButtonAcilCikis = () => {
   const {
@@ -12,8 +12,10 @@ const ButtonAcilCikis = () => {
     setButtonTextColor,
     setButtonText,
     isRoutingRunning,
-    handleButtonPressAcil
-  } = useContext(GlobalSelectContext);
+    handleButtonPressAcil,
+    text,
+    setText
+  } = useContext(AcilCikisContext);
   useEffect(() => {
     if (isRoutingRunning === true) {
       setButtonBgColor('red');
@@ -28,6 +30,11 @@ const ButtonAcilCikis = () => {
 
   return (
     <View style={styles.container}>
+        <Text
+        style={styles.titleText}
+        onValueChange={itemValue => setText(itemValue)}>
+        {text}
+      </Text>
       <TouchableOpacity
         onPress={() => {
           if (isRoutingRunning) {
@@ -53,6 +60,13 @@ const styles = {
   },
   title: {
     fontSize: 16,
+    fontWeight: 'bold',
+    padding: 8,
+    textAlign: 'center',
+  },
+  titleText: {
+    fontSize: 16,
+    color: 'white',
     fontWeight: 'bold',
     padding: 8,
     textAlign: 'center',

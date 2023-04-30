@@ -2,17 +2,18 @@ import React,{useContext} from 'react';
 import {View,StyleSheet} from 'react-native';
 import HeaderAcil from '../components/HeaderAcil';
 import Circle from '../components/Circle';
-import GlobalProvider , {GlobalSelectContext} from '../Context/GlobalState';
+import AcilCikisProvider , {AcilCikisContext} from '../Context/AcilCikisState';
 import ButtonAcilCikis from '../components/ButtonAcilCikis';
+import CircleAcilCikis from '../components/CircleAcilCikis';
 function AcilCikisScreen() {
   return (
-    <GlobalProvider>
+    <AcilCikisProvider>
       <AppContent />
-    </GlobalProvider>
+    </AcilCikisProvider>
   );
 }
 function AppContent() {
-  const {bgColor} = useContext(GlobalSelectContext);
+  const {bgColor} = useContext(AcilCikisContext);
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -61,7 +62,7 @@ function AppContent() {
     <View style={styles.container}>
       <View style={styles.girisWrapper}>
         <HeaderAcil />
-        <Circle />
+        <CircleAcilCikis />
         <ButtonAcilCikis />
       </View>
     </View>
