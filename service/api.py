@@ -6,7 +6,7 @@ app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")  # Add SocketIO support
 
 cnx = mysql.connector.connect(
-    host="localhost",
+    host="127.0.0.1",
     user="root",
     password="",
     database="vib_sensor"
@@ -52,4 +52,4 @@ def post_titresim_verileri():
 
 
 if __name__ == "__main__":
-    app.run(host="192.168.1.53", port=5000)
+    app.run(host="192.168.1.38", port=5000)
