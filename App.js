@@ -237,52 +237,56 @@ const db = new Db();
 const socket = new WebSocketService();
 
 function App() {
-  useEffect(() => {
-    socket.connect();
-    
-    const processReceivedData = async (data) => {
-      const datetimeString = data.tarih_saat;
-      const datetime = new Date(datetimeString);
-    
-      const timeRange = await db.isInTimeRange(datetime);
-      
-      if (timeRange) {
-        const imageURI = timeRange.imageURI;
-        
-        PushNotification.localNotification({
-          channelId: "earthquake-alerts",
-          title: 'DEPREM UYARISI',
-          message: 'ÇÖK KAPAN TUTUN',
-          bigPictureUrl: imageURI,
-          playSound: true,
-          soundName: 'default',
-          importance: 'high',
-          priority: 'high',
-        });
-      } else {
-        PushNotification.localNotification({
-          // const imageURI = await db.getImageForTimeRange(timeRange.id);
-          channelId: "earthquake-alerts",
-          title: 'DEPREM UYARISI else',
-          message: 'ÇÖK KAPAN TUTUN ' ,
-          // bigPictureUrl: imageURI,
-          playSound: true,
-          soundName: 'default',
-          importance: 'high',
-          priority: 'high',
-        });
-      }
-    };
-    
-    socket.onNewData((data) => {
-      console.log('Received data:', data);
-      processReceivedData(data);
-    });
-    
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
+  // Helper function to convert datetime to time
+function toTime(datetime) {
+  return datetime.getHours() * 3600 + datetime.getMinutes() * 60 + datetime.getSeconds();
+}
+
+useEffect(() => {
+  socket.connect();
+  
+  const processReceivedData = async (data) => {
+    const datetimeString = data.tarih_saat;
+    const datetime = new Date(datetimeString);
+
+    const timeInSeconds = toTime(datetime);
+
+    const timeRange = await db.isInTimeRange(timeInSeconds);
+
+    if (timeRange) {
+      const imageURI = timeRange.imageURI;
+
+      PushNotification.localNotification({
+        channelId: "earthquake-alerts",
+        title: 'DEPREM UYARISI',
+        message: 'ÇÖK KAPAN TUTUN',
+        bigPictureUrl: imageURI,
+        playSound: true,
+        soundName: 'default',
+        importance: 'high',
+        priority: 'high',
+      });
+    } else {
+      PushNotification.localNotification({
+        channelId: "earthquake-alerts",
+        title: 'DEPREM UYARISI else',
+        message: 'ÇÖK KAPAN TUTUN',
+        playSound: true, soundName: 'default',
+        importance: 'high',
+        priority: 'high',
+      });
+    }
+  };
+  
+  socket.onNewData((data) => {
+    console.log('Received data:', data);
+    processReceivedData(data);
+  });
+  
+  return () => {
+    socket.disconnect();
+  };
+}, []);
   
   return (
     <NavigationContainer>

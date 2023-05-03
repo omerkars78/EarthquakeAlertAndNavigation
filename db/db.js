@@ -512,31 +512,31 @@ class Db {
     });
   }
 
-  async findMatchingTimeRange(start_time, end_time) {
-    return new Promise((resolve, reject) => {
-      this.Db.transaction(tx => {
-        const query = `
-          SELECT * FROM time_ranges
-          WHERE start_time >= ? AND end_time <= ?;
-        `;
-        tx.executeSql(
-          query,
-          [start_time, end_time],
-          (tx, results) => {
-            if (results.rows.length > 0) {
-              resolve(results.rows.item(0));
-            } else {
-              resolve(null);
-            }
-          },
-          (tx, error) => {
-            console.log('Error fetching matching time range find:', error);
-            reject(error);
-          },
-        );
-      });
-    });
-  }
+  // async findMatchingTimeRange(start_time, end_time) {
+  //   return new Promise((resolve, reject) => {
+  //     this.Db.transaction(tx => {
+  //       const query = `
+  //         SELECT * FROM time_ranges
+  //         WHERE start_time >= ? AND end_time <= ?;
+  //       `;
+  //       tx.executeSql(
+  //         query,
+  //         [start_time, end_time],
+  //         (tx, results) => {
+  //           if (results.rows.length > 0) {
+  //             resolve(results.rows.item(0));
+  //           } else {
+  //             resolve(null);
+  //           }
+  //         },
+  //         (tx, error) => {
+  //           console.log('Error fetching matching time range find:', error);
+  //           reject(error);
+  //         },
+  //       );
+  //     });
+  //   });
+  // }
 
   async getAllTimeRangesWithImages() {
     return new Promise((resolve, reject) => {
@@ -560,6 +560,7 @@ class Db {
                 imageURI: row.imageURI,
               });
             }
+            console.log("Time Ranges and Images: ", data);
             resolve(data);
           },
           (tx, error) => {
@@ -575,43 +576,51 @@ class Db {
   async isInTimeRange(datetime) {
     try {
       const timeRanges = await this.getAllTimeRangesWithImages();
-      return timeRanges.find(
-        range => datetime >= range.startTime && datetime <= range.endTime,
+      let result = timeRanges.find(
+        range => {
+          if (range.startTime > range.endTime) {
+            console.error('Invalid time range: startTime is greater than endTime');
+            console.error('startTime:', range.startTime);
+            console.error('endTime:', range.endTime);
+          }
+          return datetime >= range.startTime && datetime <= range.endTime;
+        },
       );
+      console.log("isInTimeRange result: ", result);
+      return result;
     } catch (error) {
       console.error('Error in isInTimeRange:', error);
     }
   }
-  async getImageForTimeRange(timeRangeId) {
-    return new Promise((resolve, reject) => {
-      this.Db.transaction(tx => {
-        const query = `
-          SELECT images.imageURI
-          FROM time_ranges
-          INNER JOIN images ON time_ranges.image_id = images.id
-          WHERE time_ranges.id = ?;
-        `;
-        tx.executeSql(
-          query,
-          [timeRangeId],
-          (tx, results) => {
-            if (results.rows.length > 0) {
-              let row = results.rows.item(0);
-              resolve(row.imageURI);
-            } else {
-              resolve(null);
-            }
-          },
-          (tx, error) => {
-            console.log('Error getting image URI for time range:', error);
-            reject(error);
-          },
-        );
-      });
-    });
-  }
-  
-}
 
+  // async getImageForTimeRange(timeRangeId) {
+  //   return new Promise((resolve, reject) => {
+  //     this.Db.transaction(tx => {
+  //       const query = `
+  //         SELECT images.imageURI
+  //         FROM time_ranges
+  //         INNER JOIN images ON time_ranges.image_id = images.id
+  //         WHERE time_ranges.id = ?;
+  //       `;
+  //       tx.executeSql(
+  //         query,
+  //         [timeRangeId],
+  //         (tx, results) => {
+  //           if (results.rows.length > 0) {
+  //             let row = results.rows.item(0);
+  //             resolve(row.imageURI);
+  //           } else {
+  //             resolve(null);
+  //           }
+  //         },
+  //         (tx, error) => {
+  //           console.log('Error getting image URI for time range:', error);
+  //           reject(error);
+  //         },
+  //       );
+  //     });
+  //   });
+  // }
+}
 
 module.exports = Db;
