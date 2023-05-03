@@ -2,7 +2,6 @@ import {openDatabase} from 'react-native-sqlite-storage';
 import RNFS from 'react-native-fs';
 import {Platform} from 'react-native';
 
-
 class Db {
   constructor() {
     this.Db = openDatabase({
@@ -13,10 +12,10 @@ class Db {
     this.addCheckValue(); // Uygulama ilk çalıştığında checkValue değerini 0 olarak oluşturur
     this.checking();
   }
-  
-  async checking(){
+
+  async checking() {
     let DefaultData = await this.getDefaultCheckValue();
-    if(DefaultData == 0){
+    if (DefaultData == 0) {
       this.createMainRoutesTable();
       this.createRoutesTable();
       this.importCsvData('mainRoutes.csv', 'mainRoutes');
@@ -84,16 +83,16 @@ class Db {
       });
     });
   }
-    // En başta 0 olarak oluşturulan default değeri işlem sonunda 1 yapmamızı sağlayacak metod
-    updateCheckValue() {
-      const query = `UPDATE checkTable SET checkValue = 1`;
-      this.Db.transaction(function (txn) {
-        txn.executeSql(query, [], function (tx, res) {
-          console.log('Check value updated successfully');
-        });
+  // En başta 0 olarak oluşturulan default değeri işlem sonunda 1 yapmamızı sağlayacak metod
+  updateCheckValue() {
+    const query = `UPDATE checkTable SET checkValue = 1`;
+    this.Db.transaction(function (txn) {
+      txn.executeSql(query, [], function (tx, res) {
+        console.log('Check value updated successfully');
       });
-    }
-    // CheckValue değerini kontrol etmemizi sağlayacak metod
+    });
+  }
+  // CheckValue değerini kontrol etmemizi sağlayacak metod
   async getDefaultCheckValue() {
     const query = 'SELECT checkValue FROM checkTable;';
     return new Promise((resolve, reject) => {
@@ -110,26 +109,26 @@ class Db {
       });
     });
   }
-    // Uygulama İlk Çalıştığında Default Verileri Eklemeden Önce Kontrol Yapmamızı Sağlayacak Tablo
-    createCheckTable() {
-      const query = `CREATE TABLE IF NOT EXISTS checkTable(
+  // Uygulama İlk Çalıştığında Default Verileri Eklemeden Önce Kontrol Yapmamızı Sağlayacak Tablo
+  createCheckTable() {
+    const query = `CREATE TABLE IF NOT EXISTS checkTable(
         checkValue INTEGER DEFAULT 0
     )`;
-      this.Db.transaction(function (txn) {
-        txn.executeSql(query, [], function (tx, res) {
-          console.log('Check table created successfully');
-        });
+    this.Db.transaction(function (txn) {
+      txn.executeSql(query, [], function (tx, res) {
+        console.log('Check table created successfully');
       });
-    }
-    // ChechkValue değerine 0 değerini eklememizi sağlayacak metod
-    addCheckValue() {
-      const query = `INSERT INTO checkTable (checkValue) VALUES (0)`; // 0 değerini default olarak eklemek için DEFAULT kullanıldı
-      this.Db.transaction(function (txn) {
-        txn.executeSql(query, [], function (tx, res) {
-          console.log('Check value added successfully');
-        });
-      })
-    }
+    });
+  }
+  // ChechkValue değerine 0 değerini eklememizi sağlayacak metod
+  addCheckValue() {
+    const query = `INSERT INTO checkTable (checkValue) VALUES (0)`; // 0 değerini default olarak eklemek için DEFAULT kullanıldı
+    this.Db.transaction(function (txn) {
+      txn.executeSql(query, [], function (tx, res) {
+        console.log('Check value added successfully');
+      });
+    });
+  }
 
   //****************************  BİNA İÇİ YÖNLENDİRME VE ACİL ÇIKIŞ İÇİN **************************************************//
 
@@ -357,14 +356,14 @@ class Db {
             id INTEGER PRIMARY KEY NOT NULL,
             imageURI TEXT NOT NULL
         );`;
-  
+
     this.Db.transaction(function (txn) {
       txn.executeSql(query, [], function (tx, res) {
         console.log('Images table created successfully');
       });
     });
   }
-  
+
   // Zaman Aralıklarını Saklayan ve Fotoğrafları Tutan images Tablosuyla İlişkili Tablo
   createTimeRangesTable() {
     const query = `CREATE TABLE IF NOT EXISTS time_ranges(
@@ -374,7 +373,7 @@ class Db {
             image_id INTEGER,
             FOREIGN KEY (image_id) REFERENCES images (id) ON DELETE CASCADE
         );`;
-  
+
     this.Db.transaction(function (txn) {
       txn.executeSql(query, [], function (tx, res) {
         console.log('Time ranges table created successfully');
@@ -405,14 +404,18 @@ class Db {
   addTimeRangeWithImage(startTime, endTime, imageURI) {
     const insertImageQuery = `INSERT INTO images (imageURI) VALUES (?);`;
     const insertTimeRangeQuery = `INSERT INTO time_ranges (start_time, end_time, image_id) VALUES (?, ?, ?);`;
-  
+
     this.Db.transaction(function (txn) {
       txn.executeSql(insertImageQuery, [imageURI], function (tx, res) {
         console.log('Image added successfully');
         const imageId = res.insertId;
-        txn.executeSql(insertTimeRangeQuery, [startTime, endTime, imageId], function (tx, res) {
-          console.log('Time range with image added successfully');
-        });
+        txn.executeSql(
+          insertTimeRangeQuery,
+          [startTime, endTime, imageId],
+          function (tx, res) {
+            console.log('Time range with image added successfully');
+          },
+        );
       });
     });
   }
@@ -420,22 +423,25 @@ class Db {
   deleteTimeRangeWithImage(startTime, endTime, imageURI) {
     const deleteTimeRangeQuery = `DELETE FROM time_ranges WHERE start_time = ? AND end_time = ?;`;
     const deleteImageQuery = `DELETE FROM images WHERE imageURI = ?;`;
-  
+
     this.Db.transaction(function (txn) {
-      txn.executeSql(deleteTimeRangeQuery, [startTime, endTime], function (tx, res) {
-        console.log('Time range deleted successfully');
-        txn.executeSql(deleteImageQuery, [imageURI], function (tx, res) {
-          console.log('Image deleted successfully');
-        });
-      });
+      txn.executeSql(
+        deleteTimeRangeQuery,
+        [startTime, endTime],
+        function (tx, res) {
+          console.log('Time range deleted successfully');
+          txn.executeSql(deleteImageQuery, [imageURI], function (tx, res) {
+            console.log('Image deleted successfully');
+          });
+        },
+      );
     });
   }
-  
-  
+
   // Fotoğraf Silmek İçin Gereken Metod
   async deleteImage(imageURI) {
     return new Promise((resolve, reject) => {
-      this.Db.transaction((tx) => {
+      this.Db.transaction(tx => {
         const query = 'DELETE FROM images WHERE imageURI = ?';
         tx.executeSql(
           query,
@@ -455,8 +461,9 @@ class Db {
   // Zaman Aralığı Silmek İçin Gereken Metod
   async deleteTimeRange(startTime, endTime) {
     return new Promise((resolve, reject) => {
-      this.Db.transaction((tx) => {
-        const query = 'DELETE FROM time_ranges WHERE start_time = ? AND end_time = ?';
+      this.Db.transaction(tx => {
+        const query =
+          'DELETE FROM time_ranges WHERE start_time = ? AND end_time = ?';
         tx.executeSql(
           query,
           [startTime, endTime],
@@ -508,7 +515,7 @@ class Db {
       this.Db.transaction(tx => {
         const query = `
           SELECT * FROM time_ranges
-          WHERE start_time <= ? AND end_time >= ?;
+          WHERE start_time >= ? AND end_time <= ?;
         `;
         tx.executeSql(
           query,
@@ -528,65 +535,45 @@ class Db {
       });
     });
   }
-  
-  async getTimeRange() {
+
+  async getAllTimeRangesWithImages() {
     return new Promise((resolve, reject) => {
       this.Db.transaction(tx => {
         const query = `
-          SELECT * FROM time_ranges;
+          SELECT time_ranges.start_time, time_ranges.end_time, images.imageURI
+          FROM time_ranges
+          INNER JOIN images ON time_ranges.image_id = images.id
+          ORDER BY time_ranges.id DESC;
         `;
         tx.executeSql(
           query,
           [],
           (tx, results) => {
-            if (results.rows.length > 0) {
-              let timeRanges = [];
-              for (let i = 0; i < results.rows.length; i++) {
-                timeRanges.push(results.rows.item(i));
-              }
-              resolve(timeRanges);
-            } else {
-              resolve([]);
+            let data = [];
+            for (let i = 0; i < results.rows.length; i++) {
+              let row = results.rows.item(i);
+              data.push({
+                startTime: new Date(row.start_time),
+                endTime: new Date(row.end_time),
+                imageURI: row.imageURI,
+              });
             }
+            resolve(data);
           },
           (tx, error) => {
-            console.log('Error fetching time ranges:', error);
+            console.log('Error fetching time ranges with images:', error);
             reject(error);
           },
         );
       });
     });
   }
-  
-  async getImageForTimeRange(timeRangeId) {
-    return new Promise((resolve, reject) => {
-      this.Db.transaction(tx => {
-        const query = `
-          SELECT images.imageURI
-          FROM time_ranges
-          INNER JOIN images ON time_ranges.image_id = images.id
-          WHERE time_ranges.id = ?;
-        `;
-        tx.executeSql(
-          query,
-          [timeRangeId],
-          (tx, results) => {
-            if (results.rows.length > 0) {
-              const {imageURI} = results.rows.item(0);
-              resolve(imageURI);
-            } else {
-              resolve(null);
-            }
-          },
-          (tx, error) => {
-            console.log('Error fetching image for time range:', error);
-            reject(error);
-          },
-        );
-      });
-    });
+  async isInTimeRange(datetime) {
+    const timeRanges = await this.getAllTimeRangesWithImages();
+    return timeRanges.find(
+      range => datetime >= range.startTime && datetime <= range.endTime,
+    );
   }
-
 }
 
 module.exports = Db;

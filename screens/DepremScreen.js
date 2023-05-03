@@ -99,13 +99,13 @@ function DepremScreen() {
 
   const addDateTimeRangeWithImage = async () => {
     if (image && startTime && endTime) {
-      await db.addTimeRangeWithImage(startTime, endTime, image);
+      await db.addTimeRangeWithImage(startTime.toISOString(), endTime.toISOString(), image);
       const newItem = {
-        startTime: startTime,
-        endTime: endTime,
+        startTime: startTime.toISOString(),
+        endTime: endTime.toISOString(),
         imageURI: image,
       };
-
+  
       setDateTimeRangesWithImages([...dateTimeRangesWithImages, newItem]);
       setImage(null);
       setStartTime(null);
@@ -124,11 +124,14 @@ function DepremScreen() {
     );
   };
   const renderItem = ({item}) => {
+    const startTime = new Date(item.startTime);
+    const endTime = new Date(item.endTime);
+  
     return (
       <View style={styles.item_container}>
         <Text style={styles.item_text}>
-          Başlangıç: {item.startTime.toLocaleTimeString()} - Bitiş:{' '}
-          {item.endTime.toLocaleTimeString()}
+          Başlangıç: {startTime.toLocaleTimeString()} - Bitiş:{' '}
+          {endTime.toLocaleTimeString()}
         </Text>
         <View style={styles.item_details_container}>
           <Image
