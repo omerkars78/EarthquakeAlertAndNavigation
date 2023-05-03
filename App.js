@@ -247,11 +247,12 @@ function App() {
       const timeRange = await db.isInTimeRange(datetime);
       
       if (timeRange) {
-        const imageURI = await db.getImageForTimeRange(timeRange.id);
+        const imageURI = timeRange.imageURI;
         
         PushNotification.localNotification({
-          title: 'Yeni Veri Alındı',
-          message: 'Sunucudan yeni veri alındı: ' + JSON.stringify(data),
+          channelId: "earthquake-alerts",
+          title: 'DEPREM UYARISI',
+          message: 'ÇÖK KAPAN TUTUN',
           bigPictureUrl: imageURI,
           playSound: true,
           soundName: 'default',
@@ -260,8 +261,11 @@ function App() {
         });
       } else {
         PushNotification.localNotification({
-          title: 'Yeni Veri Alındı',
-          message: 'Titreşim Algılandı: ' + JSON.stringify(data),
+          // const imageURI = await db.getImageForTimeRange(timeRange.id);
+          channelId: "earthquake-alerts",
+          title: 'DEPREM UYARISI else',
+          message: 'ÇÖK KAPAN TUTUN ' ,
+          // bigPictureUrl: imageURI,
           playSound: true,
           soundName: 'default',
           importance: 'high',

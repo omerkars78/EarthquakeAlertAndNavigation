@@ -11,6 +11,8 @@ class Db {
     this.createCheckTable();
     this.addCheckValue(); // Uygulama ilk çalıştığında checkValue değerini 0 olarak oluşturur
     this.checking();
+    this.createImagesTable();
+    this.createTimeRangesTable();
   }
 
   async checking() {
@@ -528,7 +530,7 @@ class Db {
             }
           },
           (tx, error) => {
-            console.log('Error fetching matching time range:', error);
+            console.log('Error fetching matching time range find:', error);
             reject(error);
           },
         );
@@ -561,19 +563,55 @@ class Db {
             resolve(data);
           },
           (tx, error) => {
-            console.log('Error fetching time ranges with images:', error);
+            console.log('Error fetching time ranges with images get:', error);
+            console.log('Transaction details:', tx);
             reject(error);
           },
         );
       });
     });
   }
+
   async isInTimeRange(datetime) {
-    const timeRanges = await this.getAllTimeRangesWithImages();
-    return timeRanges.find(
-      range => datetime >= range.startTime && datetime <= range.endTime,
-    );
+    try {
+      const timeRanges = await this.getAllTimeRangesWithImages();
+      return timeRanges.find(
+        range => datetime >= range.startTime && datetime <= range.endTime,
+      );
+    } catch (error) {
+      console.error('Error in isInTimeRange:', error);
+    }
   }
+  async getImageForTimeRange(timeRangeId) {
+    return new Promise((resolve, reject) => {
+      this.Db.transaction(tx => {
+        const query = `
+          SELECT images.imageURI
+          FROM time_ranges
+          INNER JOIN images ON time_ranges.image_id = images.id
+          WHERE time_ranges.id = ?;
+        `;
+        tx.executeSql(
+          query,
+          [timeRangeId],
+          (tx, results) => {
+            if (results.rows.length > 0) {
+              let row = results.rows.item(0);
+              resolve(row.imageURI);
+            } else {
+              resolve(null);
+            }
+          },
+          (tx, error) => {
+            console.log('Error getting image URI for time range:', error);
+            reject(error);
+          },
+        );
+      });
+    });
+  }
+  
 }
+
 
 module.exports = Db;
