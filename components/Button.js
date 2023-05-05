@@ -47,7 +47,7 @@
 
 // export default Button;
 
-import React, {useContext, useState ,useEffect} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
 import {GlobalSelectContext} from '../Context/GlobalState';
 
@@ -81,18 +81,22 @@ const Button = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        onPress={() => {
-          if (isRoutingRunning) {
-            stopRouting();
-          } else {
-            handleButtonPress();
-          }
-        }}
-        style={[styles.TouchableOpacity, {backgroundColor: buttonBgColor}]}>
-        <Text style={[styles.title, {color: buttonTextColor}]}>
-          {buttonText}
-        </Text>
-      </TouchableOpacity>
+  onPress={() => {
+    if (isRoutingRunning) {
+      stopRouting();
+    } else {
+      handleButtonPress();
+    }
+  }}
+  style={[
+    styles.TouchableOpacity,
+    { backgroundColor: isRoutingRunning ? 'red' : buttonBgColor },
+  ]}
+>
+  <Text style={[styles.title, { color: isRoutingRunning ? 'white' : buttonTextColor }]}>
+    {isRoutingRunning ? 'Durdur' : buttonText}
+  </Text>
+</TouchableOpacity>
     </View>
   );
 };
