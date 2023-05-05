@@ -228,6 +228,7 @@ import AcilCikisScreen from './screens/AcilCikisScreen.js';
 import DepremScreen from './screens/DepremScreen.js';
 
 import PushNotification from 'react-native-push-notification';
+import RNFS from 'react-native-fs';
 
 import WebSocketService from './service/WebSocketService.js';
 import Db from './db/db.js';
@@ -248,7 +249,7 @@ useEffect(() => {
   const processReceivedData = async (data) => {
     const datetimeString = data.tarih_saat;
     const datetime = new Date(datetimeString);
-
+    const imagePath = RNFS.DocumentDirectoryPath + '/resim.jpg';
     const timeInSeconds = toTime(datetime);
 
     const timeRange = await db.isInTimeRange(timeInSeconds);
@@ -271,6 +272,7 @@ useEffect(() => {
         channelId: "earthquake-alerts",
         title: 'DEPREM UYARISI else',
         message: 'ÇÖK KAPAN TUTUN',
+        bigPictureUrl: imagePath,
         playSound: true, soundName: 'default',
         importance: 'high',
         priority: 'high',

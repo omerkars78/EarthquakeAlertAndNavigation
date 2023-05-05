@@ -24,6 +24,108 @@ function DepremScreen() {
 
   const db = new Db();
 
+  // useEffect(() => {
+  //   const loadAllDateTimeRangesWithImages = async () => {
+  //     const allDateTimeRangesWithImages = await db.getAllTimeRangesWithImages();
+  //     setDateTimeRangesWithImages(allDateTimeRangesWithImages);
+  //   };
+  //   loadAllDateTimeRangesWithImages();
+  // }, []);
+
+  // const pickImage = async () => {
+  //   try {
+  //     const granted = await PermissionsAndroid.request(
+  //       PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+  //       {
+  //         title: 'Deprem Uygulaması Depolama İzni',
+  //         message: 'Deprem Uygulaması depolama alanına erişim izni gerektirir.',
+  //         buttonPositive: 'Tamam',
+  //       },
+  //     );
+  //     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+  //       const options = {
+  //         title: 'Fotoğraf Seç',
+  //         storageOptions: {
+  //           skipBackup: true,
+  //           path: 'images',
+  //         },
+  //       };
+  //       launchImageLibrary(options, response => {
+  //         console.log('Response = ', response);
+  //         if (!response.didCancel && !response.error) {
+  //           const imageUri = response.assets[0].uri;
+  //           setImage(imageUri);
+  //         }
+  //       });
+  //     } else {
+  //       console.log('Depolama izni reddedildi.');
+  //     }
+  //   } catch (err) {
+  //     console.warn(err);
+  //   }
+  // };
+
+  // const showStartTimePicker = () => {
+  //   setStartTimePickerVisibility(true);
+  // };
+
+  // const hideStartTimePicker = () => {
+  //   setStartTimePickerVisibility(false);
+  // };
+
+  // const handleStartTimeConfirm = time => {
+  //   const newStartTime = new Date();
+  //   newStartTime.setHours(time.getHours());
+  //   newStartTime.setMinutes(time.getMinutes());
+  //   setStartTime(newStartTime);
+  //   hideStartTimePicker();
+  // };
+
+  // const showEndTimePicker = () => {
+  //   setEndTimePickerVisibility(true);
+  // };
+
+  // const hideEndTimePicker = () => {
+  //   setEndTimePickerVisibility(false);
+  // };
+
+  // const handleEndTimeConfirm = time => {
+  //   const newEndTime = new Date();
+  //   newEndTime.setHours(time.getHours());
+  //   newEndTime.setMinutes(time.getMinutes());
+  //   setEndTime(newEndTime);
+  //   hideEndTimePicker();
+  // };
+
+  // const addDateTimeRangeWithImage = async () => {
+  //   if (image && startTime && endTime) {
+  //     await db.addTimeRangeWithImage(startTime.toISOString(), endTime.toISOString(), image);
+  //     const newItem = {
+  //       startTime: startTime.toISOString(),
+  //       endTime: endTime.toISOString(),
+  //       imageURI: image,
+  //     };
+  
+  //     setDateTimeRangesWithImages([...dateTimeRangesWithImages, newItem]);
+  //     setImage(null);
+  //     setStartTime(null);
+  //     setEndTime(null);
+  //   } else {
+  //     alert('Lütfen başlangıç saati, bitiş saati ve fotoğraf seçiniz.');
+  //   }
+  // };
+
+  // const deleteItem = async item => {
+  //   await db.deleteTimeRangeWithImage(item.startTime, item.endTime,item.imageURI);
+  //   setDateTimeRangesWithImages(
+  //     dateTimeRangesWithImages.filter(
+  //       dateTimeRange => dateTimeRange.startTime !== item.startTime,
+  //     ),
+  //   );
+  // };
+  // const renderItem = ({item}) => {
+  //   const startTime = new Date(item.startTime);
+  //   const endTime = new Date(item.endTime);
   useEffect(() => {
     const loadAllDateTimeRangesWithImages = async () => {
       const allDateTimeRangesWithImages = await db.getAllTimeRangesWithImages();
@@ -31,7 +133,15 @@ function DepremScreen() {
     };
     loadAllDateTimeRangesWithImages();
   }, []);
-
+  
+  const adjustTimezone = (time) => {
+    const timezoneOffsetInMinutes = new Date().getTimezoneOffset();
+    const timezoneOffsetInHours = timezoneOffsetInMinutes / 60;
+    const adjustedTime = new Date(time);
+    adjustedTime.setHours(adjustedTime.getHours() - timezoneOffsetInHours);
+    return adjustedTime;
+  };
+  
   const pickImage = async () => {
     try {
       const granted = await PermissionsAndroid.request(
@@ -64,39 +174,35 @@ function DepremScreen() {
       console.warn(err);
     }
   };
-
+  
   const showStartTimePicker = () => {
     setStartTimePickerVisibility(true);
   };
-
+  
   const hideStartTimePicker = () => {
     setStartTimePickerVisibility(false);
   };
-
-  const handleStartTimeConfirm = time => {
-    const newStartTime = new Date();
-    newStartTime.setHours(time.getHours());
-    newStartTime.setMinutes(time.getMinutes());
-    setStartTime(newStartTime);
+  
+  const handleStartTimeConfirm = (time) => {
+    const adjustedTime = adjustTimezone(time);
+    setStartTime(adjustedTime);
     hideStartTimePicker();
   };
-
+  
   const showEndTimePicker = () => {
     setEndTimePickerVisibility(true);
   };
-
+  
   const hideEndTimePicker = () => {
     setEndTimePickerVisibility(false);
   };
-
-  const handleEndTimeConfirm = time => {
-    const newEndTime = new Date();
-    newEndTime.setHours(time.getHours());
-    newEndTime.setMinutes(time.getMinutes());
-    setEndTime(newEndTime);
+  
+  const handleEndTimeConfirm = (time) => {
+    const adjustedTime = adjustTimezone(time);
+    setEndTime(adjustedTime);
     hideEndTimePicker();
   };
-
+  
   const addDateTimeRangeWithImage = async () => {
     if (image && startTime && endTime) {
       await db.addTimeRangeWithImage(startTime.toISOString(), endTime.toISOString(), image);
@@ -114,15 +220,16 @@ function DepremScreen() {
       alert('Lütfen başlangıç saati, bitiş saati ve fotoğraf seçiniz.');
     }
   };
-
-  const deleteItem = async item => {
-    await db.deleteTimeRangeWithImage(item.startTime, item.endTime,item.imageURI);
+  
+  const deleteItem = async (item) => {
+    await db.deleteTimeRangeWithImage(item.startTime, item.endTime, item.imageURI);
     setDateTimeRangesWithImages(
       dateTimeRangesWithImages.filter(
         dateTimeRange => dateTimeRange.startTime !== item.startTime,
       ),
     );
   };
+  
   const renderItem = ({item}) => {
     const startTime = new Date(item.startTime);
     const endTime = new Date(item.endTime);
