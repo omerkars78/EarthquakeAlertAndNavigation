@@ -24,11 +24,18 @@ function toTime(datetime) {
 
 useEffect(() => {
   socket.connect();
-  
+  db.getAllImages();
+  db.getAllTimeRanges();
   const processReceivedData = async (data) => {
     const datetimeString = data.tarih_saat;
+    // const datetime = new Date(datetimeString);
+    const adjustTimezone = (time) => {
+      const timezoneOffsetInHours = 3;
+      const adjustedTime = new Date(time);
+      adjustedTime.setHours(adjustedTime.getHours() + timezoneOffsetInHours);
+      return adjustedTime;
+  };
     const datetime = new Date(datetimeString);
-
     
     const imagePath = 'https://cdn.karar.com/news/1323298.jpg';
     const timeInSeconds = toTime(datetime);

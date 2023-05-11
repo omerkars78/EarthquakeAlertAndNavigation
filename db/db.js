@@ -13,6 +13,7 @@ class Db {
     this.checking();
     this.createImagesTable();
     this.createTimeRangesTable();
+
   }
 
   async checking() {
@@ -23,6 +24,11 @@ class Db {
       this.importCsvData('mainRoutes.csv', 'mainRoutes');
       this.importCsvData('routes.csv', 'routes');
       this.updateCheckValue();
+      this.Db.transaction(tx => {
+        tx.executeSql('PRAGMA foreign_keys = ON;', [], (tx, results) => {
+          console.log('Foreign key constraints enabled');
+        });
+      });
     }
   }
 
@@ -382,7 +388,67 @@ class Db {
       });
     });
   }
+  // Images tablosundaki tüm verileri getirir
+async getAllImages() {
+  return new Promise((resolve, reject) => {
+      this.Db.transaction(tx => {
+          const query = 'SELECT * FROM images';
+          tx.executeSql(
+              query,
+              [],
+              (tx, results) => {
+                  let data = [];
+                  for (let i = 0; i < results.rows.length; i++) {
+                      let row = results.rows.item(i);
+                      data.push({
+                          id: row.id,
+                          imageURI: row.imageURI,
+                      });
+                  }
+                  console.log('All Images: ', data);
+                  resolve(data);
+              },
+              (tx, error) => {
+                  console.log('Error fetching all images:', error);
+                  console.log('Transaction details:', tx);
+                  reject(error);
+              },
+          );
+      });
+  });
+}
 
+// Time_ranges tablosundaki tüm verileri getirir
+async getAllTimeRanges() {
+  return new Promise((resolve, reject) => {
+      this.Db.transaction(tx => {
+          const query = 'SELECT * FROM time_ranges';
+          tx.executeSql(
+              query,
+              [],
+              (tx, results) => {
+                  let data = [];
+                  for (let i = 0; i < results.rows.length; i++) {
+                      let row = results.rows.item(i);
+                      data.push({
+                          id: row.id,
+                          startTime: row.start_time,
+                          endTime: row.end_time,
+                          imageId: row.image_id,
+                      });
+                  }
+                  console.log('All Time Ranges: ', data);
+                  resolve(data);
+              },
+              (tx, error) => {
+                  console.log('Error fetching all time ranges:', error);
+                  console.log('Transaction details:', tx);
+                  reject(error);
+              },
+          );
+      });
+  });
+}
   // Sadece Zaman Aralığı Ekleyen Metod
   addTimeRanges() {
     const query = `INSERT INTO time_ranges (start_time,end_time) VALUES (?,?);`;
@@ -422,23 +488,32 @@ class Db {
     });
   }
   // Zaman Aralığı ve İlişkili Fotoğrafı Silen Metod
-  deleteTimeRangeWithImage(startTime, endTime, imageURI) {
-    const deleteTimeRangeQuery = `DELETE FROM time_ranges WHERE start_time = ? AND end_time = ?;`;
-    const deleteImageQuery = `DELETE FROM images WHERE imageURI = ?;`;
-
-    this.Db.transaction(function (txn) {
-      txn.executeSql(
-        deleteTimeRangeQuery,
-        [startTime, endTime],
-        function (tx, res) {
-          console.log('Time range deleted successfully');
-          txn.executeSql(deleteImageQuery, [imageURI], function (tx, res) {
-            console.log('Image deleted successfully');
-          });
-        },
+  deleteTimeRangeWithImage(id) {
+    const deleteTimeRangeQuery = `DELETE FROM time_ranges WHERE id = ?;`;
+    const deleteImageQuery = `DELETE FROM images WHERE id = ?;`;
+  
+    this.Db.transaction(tx => {
+      tx.executeSql(deleteImageQuery, [id], 
+        (tx, res) => {
+          console.log('Image deleted successfully');
+          tx.executeSql(deleteTimeRangeQuery, [id],
+            (tx, res) => {
+              console.log('Time range deleted successfully');
+            },
+            (tx, error) => {
+              console.log('Error while deleting time range:', error);
+            }
+          );
+        }, 
+        (tx, error) => {
+          console.log('Error while deleting image:', error);
+        }
       );
     });
   }
+  
+  
+
 
   // Fotoğraf Silmek İçin Gereken Metod
   async deleteImage(imageURI) {
@@ -512,32 +587,6 @@ class Db {
     });
   }
 
-  // async findMatchingTimeRange(start_time, end_time) {
-  //   return new Promise((resolve, reject) => {
-  //     this.Db.transaction(tx => {
-  //       const query = `
-  //         SELECT * FROM time_ranges
-  //         WHERE start_time >= ? AND end_time <= ?;
-  //       `;
-  //       tx.executeSql(
-  //         query,
-  //         [start_time, end_time],
-  //         (tx, results) => {
-  //           if (results.rows.length > 0) {
-  //             resolve(results.rows.item(0));
-  //           } else {
-  //             resolve(null);
-  //           }
-  //         },
-  //         (tx, error) => {
-  //           console.log('Error fetching matching time range find:', error);
-  //           reject(error);
-  //         },
-  //       );
-  //     });
-  //   });
-  // }
-
   async getAllTimeRangesWithImages() {
     return new Promise((resolve, reject) => {
       this.Db.transaction(tx => {
@@ -578,12 +627,15 @@ class Db {
       const timeRanges = await this.getAllTimeRangesWithImages();
       let result = timeRanges.find(
         range => {
-          if (range.startTime > range.endTime) {
+          const startTimeInSeconds = range.startTime.getTime() / 1000;
+          const endTimeInSeconds = range.endTime.getTime() / 1000;
+  
+          if (startTimeInSeconds > endTimeInSeconds) {
             console.error('Invalid time range: startTime is greater than endTime');
             console.error('startTime:', range.startTime);
             console.error('endTime:', range.endTime);
           }
-          return datetime >= range.startTime && datetime <= range.endTime;
+          return datetime >= startTimeInSeconds && datetime <= endTimeInSeconds;
         },
       );
       console.log("isInTimeRange result: ", result);
@@ -592,6 +644,7 @@ class Db {
       console.error('Error in isInTimeRange:', error);
     }
   }
+  
 
   // async getImageForTimeRange(timeRangeId) {
   //   return new Promise((resolve, reject) => {
