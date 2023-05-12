@@ -560,8 +560,8 @@ async getAllTimeRanges() {
       const timeRanges = await this.getAllTimeRangesWithImages();
       let result = timeRanges.find(
         range => {
-          const startTimeInSeconds = range.startTime.getTime() / 1000;
-          const endTimeInSeconds = range.endTime.getTime() / 1000;
+          const startTimeInSeconds = range.startTime.getTime() / 1000; // saniye cinsinden hesaplanıyor
+          const endTimeInSeconds = range.endTime.getTime() / 1000; // saniye cinsinden hesaplanıyor
   
           if (startTimeInSeconds > endTimeInSeconds) {
             console.error('Invalid time range: startTime is greater than endTime');
@@ -577,6 +577,7 @@ async getAllTimeRanges() {
       console.error('Error in isInTimeRange:', error);
     }
   }
+  
   
   // tüm zaman ve resimleri silmek için bir metod
   deleteAllData() {
