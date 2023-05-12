@@ -487,74 +487,7 @@ async getAllTimeRanges() {
       });
     });
   }
-  // Zaman Aralığı ve İlişkili Fotoğrafı Silen Metod
-  deleteTimeRangeWithImage(id) {
-    const deleteTimeRangeQuery = `DELETE FROM time_ranges WHERE id = ?;`;
-    const deleteImageQuery = `DELETE FROM images WHERE id = ?;`;
-  
-    this.Db.transaction(tx => {
-      tx.executeSql(deleteImageQuery, [id], 
-        (tx, res) => {
-          console.log('Image deleted successfully');
-          tx.executeSql(deleteTimeRangeQuery, [id],
-            (tx, res) => {
-              console.log('Time range deleted successfully');
-            },
-            (tx, error) => {
-              console.log('Error while deleting time range:', error);
-            }
-          );
-        }, 
-        (tx, error) => {
-          console.log('Error while deleting image:', error);
-        }
-      );
-    });
-  }
-  
-  
 
-
-  // Fotoğraf Silmek İçin Gereken Metod
-  async deleteImage(imageURI) {
-    return new Promise((resolve, reject) => {
-      this.Db.transaction(tx => {
-        const query = 'DELETE FROM images WHERE imageURI = ?';
-        tx.executeSql(
-          query,
-          [imageURI],
-          (_, resultSet) => {
-            resolve(resultSet);
-          },
-          (_, error) => {
-            console.log('Error deleting image:', error);
-            reject(error);
-          },
-        );
-      });
-    });
-  }
-
-  // Zaman Aralığı Silmek İçin Gereken Metod
-  async deleteTimeRange(startTime, endTime) {
-    return new Promise((resolve, reject) => {
-      this.Db.transaction(tx => {
-        const query =
-          'DELETE FROM time_ranges WHERE start_time = ? AND end_time = ?';
-        tx.executeSql(
-          query,
-          [startTime, endTime],
-          (_, resultSet) => {
-            resolve(resultSet);
-          },
-          (_, error) => {
-            console.log('Error deleting time range:', error);
-            reject(error);
-          },
-        );
-      });
-    });
-  }
 
   // En Son Eklenen Zaman Aralığı Ve Resmi Almak İçin Bir Metod
   async getLastTimeRangeWithImage() {
@@ -645,35 +578,31 @@ async getAllTimeRanges() {
     }
   }
   
-
-  // async getImageForTimeRange(timeRangeId) {
-  //   return new Promise((resolve, reject) => {
-  //     this.Db.transaction(tx => {
-  //       const query = `
-  //         SELECT images.imageURI
-  //         FROM time_ranges
-  //         INNER JOIN images ON time_ranges.image_id = images.id
-  //         WHERE time_ranges.id = ?;
-  //       `;
-  //       tx.executeSql(
-  //         query,
-  //         [timeRangeId],
-  //         (tx, results) => {
-  //           if (results.rows.length > 0) {
-  //             let row = results.rows.item(0);
-  //             resolve(row.imageURI);
-  //           } else {
-  //             resolve(null);
-  //           }
-  //         },
-  //         (tx, error) => {
-  //           console.log('Error getting image URI for time range:', error);
-  //           reject(error);
-  //         },
-  //       );
-  //     });
-  //   });
-  // }
+  // tüm zaman ve resimleri silmek için bir metod
+  deleteAllData() {
+    const deleteAllTimeRangesQuery = `DELETE FROM time_ranges;`;
+    const deleteAllImagesQuery = `DELETE FROM images;`;
+  
+    this.Db.transaction(tx => {
+      tx.executeSql(deleteAllTimeRangesQuery, [], 
+        (tx, res) => {
+          console.log('All time ranges deleted successfully');
+          tx.executeSql(deleteAllImagesQuery, [],
+            (tx, res) => {
+              console.log('All images deleted successfully');
+            },
+            (tx, error) => {
+              console.log('Error while deleting all images:', error);
+            }
+          );
+        }, 
+        (tx, error) => {
+          console.log('Error while deleting all time ranges:', error);
+        }
+      );
+    });
+  }
+  
 }
 
 module.exports = Db;
