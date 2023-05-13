@@ -374,10 +374,17 @@ function DepremScreen() {
   };
 
   const handleStartTimeConfirm = time => {
-    const adjustedTime = time;
+    const adjustedTime = new Date(time.getTime() - time.getTimezoneOffset() * 60000);
     setStartTime(adjustedTime);
     hideStartTimePicker();
   };
+  
+  const handleEndTimeConfirm = time => {
+    const adjustedTime = new Date(time.getTime() - time.getTimezoneOffset() * 60000);
+    setEndTime(adjustedTime);
+    hideEndTimePicker();
+  };
+  
 
   const showEndTimePicker = () => {
     setEndTimePickerVisibility(true);
@@ -387,11 +394,7 @@ function DepremScreen() {
     setEndTimePickerVisibility(false);
   };
 
-  const handleEndTimeConfirm = time => {
-    const adjustedTime = time;
-    setEndTime(adjustedTime);
-    hideEndTimePicker();
-  };
+
 
   const addDateTimeRangeWithImage = async () => {
     if (image && startTime && endTime) {

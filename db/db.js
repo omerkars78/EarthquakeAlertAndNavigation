@@ -555,28 +555,34 @@ async getAllTimeRanges() {
     });
   }
 
-  async isInTimeRange(datetime) {
-    try {
-      const timeRanges = await this.getAllTimeRangesWithImages();
-      let result = timeRanges.find(
-        range => {
-          const startTimeInSeconds = range.startTime.getTime() / 1000; // saniye cinsinden hesaplanıyor
-          const endTimeInSeconds = range.endTime.getTime() / 1000; // saniye cinsinden hesaplanıyor
+// Db.js
+async isInTimeRange(datetime) {
+  try {
+    const timeRanges = await this.getAllTimeRangesWithImages();
+
+    let result = timeRanges.find(
+      range => {
+        const startTimeInSeconds = range.startTime.getHours() * 3600 + range.startTime.getMinutes() * 60 + range.startTime.getSeconds();
+        const endTimeInSeconds = range.endTime.getHours() * 3600 + range.endTime.getMinutes() * 60 + range.endTime.getSeconds();
   
-          if (startTimeInSeconds > endTimeInSeconds) {
-            console.error('Invalid time range: startTime is greater than endTime');
-            console.error('startTime:', range.startTime);
-            console.error('endTime:', range.endTime);
-          }
-          return datetime >= startTimeInSeconds && datetime <= endTimeInSeconds;
-        },
-      );
-      console.log("isInTimeRange result: ", result);
-      return result;
-    } catch (error) {
-      console.error('Error in isInTimeRange:', error);
-    }
+        if (startTimeInSeconds > endTimeInSeconds) {
+          console.error('Invalid time range: startTime is greater than endTime');
+          console.error('startTime:', range.startTime);
+          console.error('endTime:', range.endTime);
+        }
+        return datetime >= startTimeInSeconds && datetime <= endTimeInSeconds;
+      },
+    );
+
+    console.log("isInTimeRange result: ", result);
+    return result;
+  } catch (error) {
+    console.error('Error in isInTimeRange:', error);
   }
+}
+
+
+  
   
   
   // tüm zaman ve resimleri silmek için bir metod
