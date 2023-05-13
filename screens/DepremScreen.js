@@ -432,8 +432,11 @@ function DepremScreen() {
   };
 
   const renderItem = ({item}) => {
-    const startTime = new Date(item.startTime);
-    const endTime = new Date(item.endTime);
+    let startTime = new Date(item.startTime);
+    let endTime = new Date(item.endTime);
+
+    startTime = new Date(startTime.getTime() + startTime.getTimezoneOffset() * 60 * 1000);
+    endTime = new Date(endTime.getTime() + endTime.getTimezoneOffset() * 60 * 1000);
 
     return (
       <View style={styles.item_container}>
@@ -450,6 +453,7 @@ function DepremScreen() {
       </View>
     );
   };
+
 
   return (
     <View style={styles.container}>
