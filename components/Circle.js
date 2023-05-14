@@ -22,7 +22,7 @@ const Circle = () => {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: selectedArrow === 'dot-fill' ? 100 : 250,
-    paddingLeft : selectedArrow === 'dot-fill' ? 115 : 90 && selectedArrow === 'x' ? 75 : 90,
+    paddingLeft : selectedArrow === 'dot-fill' ? 115 : 60 && selectedArrow === 'x' ? 75 : 60,
     paddingTop : selectedArrow === 'dot-fill' ? 80 : 0,
     color: 'black',  }
   
