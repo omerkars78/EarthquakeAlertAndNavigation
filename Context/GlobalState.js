@@ -62,9 +62,8 @@ export const GlobalSelectContext = createContext();
 
 export const department = [
   {name: 'Lütfen varış Yeri Seçiniz', major: '0', minor: '0'},
-  {name: 'Vahap Tecim', major: '4', minor: '102'},
+  {name: 'Vahap Tecim', major: '1', minor: '40'},
   {name: 'Ybs Sekreterlik', major: '4', minor: '103'},
-  {name: 'Oda', major: '1', minor: '40'},
 ];
 
 export const arrow = [
@@ -182,18 +181,18 @@ export const GlobalProvider = props => {
     if (
       (minRssiDevice.rssi === 0 ||
         Math.abs(rssi) < Math.abs(minRssiDevice.rssi)) &&
-      rssi > -50
+      rssi > -35
     ) {
       setMinRssiDevice({rssi, major, minor});
     } else if (
       Math.abs(rssi) === Math.abs(minRssiDevice.rssi) &&
-      rssi > -50
+      rssi > -35
     ) {
       setMinRssiDevice({rssi, major, minor});
     } else if (
-      Math.abs(rssi - minRssiDevice.rssi) > 50 &&
+      Math.abs(rssi - minRssiDevice.rssi) > 35 &&
       Math.abs(rssi) < Math.abs(minRssiDevice.rssi) &&
-      rssi > -50
+      rssi > -35
     ) {
       setMinRssiDevice({rssi, major, minor});
     }
@@ -292,7 +291,7 @@ export const GlobalProvider = props => {
       }
     }
     fetchMatchedData();
-  }, [minRssiDevice, isRoutingRunning]);
+  }, [minRssiDevice,isRoutingRunning]);
 
   // Bizi İlgilendiren Veri kümesini tutan useRef
   useEffect(() => {
@@ -317,6 +316,7 @@ export const GlobalProvider = props => {
       alert('Please select a department.');
     } else {
       AuthOnPress();
+
     }
   }, [isDepartmentSelected, AuthOnPress]);
   

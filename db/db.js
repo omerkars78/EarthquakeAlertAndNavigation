@@ -5,7 +5,7 @@ import {Platform} from 'react-native';
 class Db {
   constructor() {
     this.Db = openDatabase({
-      name: 'beacon4.db',
+      name: 'beacon31.db',
       location: 'default',
     });
     this.createCheckTable();

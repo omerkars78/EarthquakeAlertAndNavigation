@@ -1,5 +1,5 @@
 import React, {useContext, useState ,useEffect} from 'react';
-import {TouchableOpacity, Text, View} from 'react-native';
+import { TouchableOpacity, Text, View, Alert} from 'react-native';
 import {AcilCikisContext} from '../Context/AcilCikisState';
 
 const ButtonAcilCikis = () => {
@@ -30,7 +30,7 @@ const ButtonAcilCikis = () => {
 
   return (
     <View style={styles.container}>
-        <Text
+      <Text
         style={styles.titleText}
         onValueChange={itemValue => setText(itemValue)}>
         {text}
@@ -46,6 +46,21 @@ const ButtonAcilCikis = () => {
         style={[styles.TouchableOpacity, {backgroundColor: buttonBgColor}]}>
         <Text style={[styles.title, {color: buttonTextColor}]}>
           {buttonText}
+        </Text>
+      </TouchableOpacity>
+  
+      <TouchableOpacity
+        onPress={() => {
+          Alert.alert(
+            'Uyarı',
+            'Bu özellik deprem harici acil durumlarda kullanılması içindir',
+            [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+            {cancelable: false},
+          );
+        }}
+        style={[styles.TouchableOpacity, {backgroundColor: 'red', marginTop: 10}]}>
+        <Text style={[styles.title, {color: 'white'}]}>
+          Uyarı
         </Text>
       </TouchableOpacity>
     </View>

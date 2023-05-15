@@ -14,9 +14,9 @@ const mainRoutes = [
 
 const routes = [
   { mainRouteId: 1, curMajor: 0, curMinor: 1, nextMajor: 0, nextMinor: 2, nextDirection: 'arrow-up', nextText: '5 metre düz ilerleyin' },
-  { mainRouteId: 1, curMajor: 0, curMinor: 2, nextMajor: 1, nextMinor: 10, nextDirection: 'arrow-left', nextText: 'Sağa dönün sonra sola dönün' },
+  { mainRouteId: 1, curMajor: 1, curMinor: 40, nextMajor: 1, nextMinor: 10, nextDirection: 'arrow-left', nextText: 'Sağa dönün sonra sola dönün' },
   { mainRouteId: 1, curMajor: 1, curMinor: 10, nextMajor: 1, nextMinor: 40, nextDirection: 'arrow-left', nextText: 'İki metre ilerleyin' },
-  { mainRouteId: 1, curMajor: 1, curMinor: 40, nextMajor: 0, nextMinor: 0, nextDirection: 'dot-fill', nextText: 'hedefe vardınız' }
+  { mainRouteId: 1, curMajor: 0, curMinor: 2, nextMajor: 0, nextMinor: 0, nextDirection: 'dot-fill', nextText: 'hedefe vardınız' }
 ];
 
 export const AcilCikisProvider = props => {
