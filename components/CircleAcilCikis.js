@@ -21,7 +21,7 @@ const CircleAcilCikis = () => {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: selectedArrow === 'dot-fill' ? 100 : 250,
+    fontSize: selectedArrow === 'dot-fill' ? 100 : 250 ,
     paddingLeft : selectedArrow === 'dot-fill' ? 115 : 60 && selectedArrow === 'x' ? 75 : 60,
     paddingTop : selectedArrow === 'dot-fill' ? 80 : 0,
     color: 'black',  }

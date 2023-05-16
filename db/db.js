@@ -5,7 +5,7 @@ import {Platform} from 'react-native';
 class Db {
   constructor() {
     this.Db = openDatabase({
-      name: 'beacon31.db',
+      name: 'beacon75.db',
       location: 'default',
     });
     this.createCheckTable();
@@ -24,11 +24,7 @@ class Db {
       this.importCsvData('mainRoutes.csv', 'mainRoutes');
       this.importCsvData('routes.csv', 'routes');
       this.updateCheckValue();
-      this.Db.transaction(tx => {
-        tx.executeSql('PRAGMA foreign_keys = ON;', [], (tx, results) => {
-          console.log('Foreign key constraints enabled');
-        });
-      });
+     
     }
   }
 

@@ -10,6 +10,7 @@ import {BleManager} from 'react-native-ble-plx';
 import RNFetchBlob from 'rn-fetch-blob';
 import {stringToBytes} from 'convert-string';
 import Db from '../db/db.js';
+import DbNavigate from '../db/db_navigate.js';
 
 async function requestBluetoothPermission() {
   try {
@@ -35,7 +36,7 @@ async function requestBluetoothPermission() {
 const manager = new BleManager();
 const defaultDeviceName = 'POI';
 const defaultDeviceRssi = -1;
-const dbInstance = new Db();
+const dbInstance = new DbNavigate();
 
 
 // Bluetooh İzinleri Kontrol Ederiz
@@ -62,8 +63,9 @@ export const GlobalSelectContext = createContext();
 
 export const department = [
   {name: 'Lütfen varış Yeri Seçiniz', major: '0', minor: '0'},
-  {name: 'Vahap Tecim', major: '1', minor: '40'},
+  {name: 'Vahap Tecim', major: '4', minor: '102'},
   {name: 'Ybs Sekreterlik', major: '4', minor: '103'},
+  {name: 'Ybs Öğrenci İşleri', major: '4', minor: '104'},
 ];
 
 export const arrow = [
@@ -79,7 +81,7 @@ export const arrow = [
 
 export const GlobalProvider = props => {
   const [bgColor, setBgColor] = useState('#9370db');
-  // const [bgColor, setBgColor] = useState('#0000ff');
+
   const [selected, setSelected] = useState(department[0]);
   const [selectedArrow, setSelectedArrow] = useState(arrow[0].name);
   const [minRssiDevice, setMinRssiDevice] = useState({
@@ -88,7 +90,7 @@ export const GlobalProvider = props => {
     minor: 0,
   });
   const [text, setText] = useState('Hoşgeldiniz Lütfen Hedefinizi Seçiniz');
-
+ 
   let startMajor = String(minRssiDevice.major);
   let startMinor = String(minRssiDevice.minor);
   let finishMajor = String(selected.major);
@@ -181,18 +183,18 @@ export const GlobalProvider = props => {
     if (
       (minRssiDevice.rssi === 0 ||
         Math.abs(rssi) < Math.abs(minRssiDevice.rssi)) &&
-      rssi > -35
+      rssi > -15
     ) {
       setMinRssiDevice({rssi, major, minor});
     } else if (
       Math.abs(rssi) === Math.abs(minRssiDevice.rssi) &&
-      rssi > -35
+      rssi > -15
     ) {
       setMinRssiDevice({rssi, major, minor});
     } else if (
-      Math.abs(rssi - minRssiDevice.rssi) > 35 &&
+      Math.abs(rssi - minRssiDevice.rssi) > 15 &&
       Math.abs(rssi) < Math.abs(minRssiDevice.rssi) &&
-      rssi > -35
+      rssi > -15
     ) {
       setMinRssiDevice({rssi, major, minor});
     }
@@ -305,6 +307,7 @@ export const GlobalProvider = props => {
       console.log('AuthOnPress is called koşula giriyor');
       intervalIdRef.current = setInterval(() => {
         scanForDevices();
+  
       }, 500);
       setIsRoutingRunning(true);
     }

@@ -1,5 +1,17 @@
 mainRouteId,curMajor,curMinor,nextMajor,nextMinor,nextDirection,nextDistance,beforeMajor,beforeMinor,beforeDirection,beforeDistance,nextText
-1,0,1,0,2,arrow-up,10.0,0,0,dot-fill,0.0,5 metre düz ilerleyin
-1,0,2,1,10,arrow-left,10.0,0,1,arrow-up,10.0,Sağa dönün sonra sola dönün
-1,1,10,1,40,arrow-left,10.0,0,2,arrow-up,2.0,İki metre ilerleyin
-1,1,40,0,0,dot-fill,0.0,1,10,arrow-up,2.0,hedefe vardınız
+1,0,1,0,2,arrow-left,10.0,0,0,dot-fill,0.0,10 metre sağa merdivene ilerleyiniz
+1,0,2,1,100,fold-up,5.0,0,1,arrow-left,10.0,1 kat yukarı çıkınız
+1,1,100,2,100,fold-up,5.0,0,2,fold-up,5.0,1 kat yukarı çıkınız
+1,2,100,3,100,fold-up,5.0,1,100,fold-up,5.0,1 kat yukarı çıkınız
+1,3,100,4,100,fold-up,5.0,2,100,fold-up,5.0,1 kat yukarı çıkınız
+1,4,100,4,101,arrow-up,20.0,3,100,fold-up,5.0,20 metre düz ilerleyin
+1,4,101,4,102,arrow-left,3.0,4,100,arrow-up,20.0,Hedefiniz 3 metre soldadır
+2,0,1,0,2,arrow-left,10.0,0,0,dot-fill,0.0,10 metre sağa merdivene ilerleyiniz
+2,0,2,1,100,fold-up,5.0,0,1,arrow-left,10.0,1 kat yukarı çıkınız
+2,1,100,2,100,fold-up,5.0,0,2,fold-up,5.0,1 kat yukarı çıkınız
+2,2,100,3,100,fold-up,5.0,1,100,fold-up,5.0,1 kat yukarı çıkınız
+2,3,100,4,100,fold-up,5.0,2,100,fold-up,5.0,1 kat yukarı çıkınız
+2,4,100,4,101,arrow-up,20.0,3,100,fold-up,5.0,20 metre düz ilerleyin
+2,4,101,4,102,arrow-right,3.0,4,100,arrow-up,20.0,Hedefiniz 3 metre sağdadır
+3,4,102,4,101,arrow-right,3.0,0,0,dot-fill,0.0,3 metre sağa ilerleyiniz
+3,4,101,4,103,arrow-right,3.0,4,102,arrow-right,3.0,Hedefiniz 3 metre Sağdadır

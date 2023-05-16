@@ -21,9 +21,9 @@ const Circle = () => {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: selectedArrow === 'dot-fill' ? 100 : 250,
-    paddingLeft : selectedArrow === 'dot-fill' ? 115 : 60 && selectedArrow === 'x' ? 75 : 60,
-    paddingTop : selectedArrow === 'dot-fill' ? 80 : 0,
+    fontSize: selectedArrow === 'dot-fill' ? 100 : 250 && selectedArrow === 'fold-up' ? 180 : 250 && selectedArrow === 'fold-down' ? 180 : 250,
+    paddingLeft : selectedArrow === 'dot-fill' ? 115 : 60 && selectedArrow === 'x' ? 75 : 60 && selectedArrow === 'fold-up' ? 50 : 60 && selectedArrow === 'fold-down' ? 50 : 60,
+    paddingTop : selectedArrow === 'dot-fill' ? 80 : 0 && selectedArrow === 'fold-up' ? 25 : 0 && selectedArrow === 'fold-down' ? 25 : 0,
     color: 'black',  }
   
   });
