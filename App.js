@@ -10,10 +10,10 @@ import PushNotification from 'react-native-push-notification';
 import RNFS from 'react-native-fs';
 
 import WebSocketService from './service/WebSocketService.js';
-import Db from './db/db.js';
+import DbDeprem from './db/dbDeprem.js';
 
 const Stack = createNativeStackNavigator();
-const db = new Db();
+const db = new DbDeprem();
 const socket = new WebSocketService();
 
 function App() {
