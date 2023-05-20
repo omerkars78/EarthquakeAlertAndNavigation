@@ -38,6 +38,7 @@ useEffect(() => {
     const datetime = new Date(datetimeString);
     
     const imagePath = 'https://cdn.karar.com/news/1323298.jpg';
+    // const imagePath = 'https://i.pinimg.com/564x/e1/3d/b7/e13db7c5f261fbe97eb8fe0f9f53738d.jpg';
     const timeInSeconds = toTime(datetime);
 
     const timeRange = await db.isInTimeRange(timeInSeconds);

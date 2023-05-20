@@ -3,35 +3,32 @@ import { Alert } from 'react-native';
 import { BleManager } from 'react-native-ble-plx';
 import RNFetchBlob from 'rn-fetch-blob';
 import { stringToBytes } from 'convert-string';
-
 const manager = new BleManager();
-
 export const AcilCikisContext = createContext();
-
 const mainRoutes = [
   { startMajor: 0, startMinor: 1, finishMajor: 1, finishMinor: 40 }
 ];
-
 const routes = [
   { mainRouteId: 1, curMajor: 0, curMinor: 1, nextMajor: 0, nextMinor: 2, nextDirection: 'arrow-up', nextText: '5 metre düz ilerleyin' },
   { mainRouteId: 1, curMajor: 1, curMinor: 40, nextMajor: 1, nextMinor: 10, nextDirection: 'arrow-left', nextText: 'Sağa dönün sonra sola dönün' },
   { mainRouteId: 1, curMajor: 1, curMinor: 10, nextMajor: 1, nextMinor: 40, nextDirection: 'arrow-left', nextText: 'İki metre ilerleyin' },
   { mainRouteId: 1, curMajor: 0, curMinor: 2, nextMajor: 0, nextMinor: 0, nextDirection: 'dot-fill', nextText: 'hedefe vardınız' }
 ];
-
 export const AcilCikisProvider = props => {
   const [buttonText, setButtonText] = useState('Rota Oluştur');
   const [buttonBgColor, setButtonBgColor] = useState('white');
   const [buttonTextColor, setButtonTextColor] = useState('black');
-  const [bgColor, setBgColor] = useState('#9370db');
+  // const [bgColor, setBgColor] = useState('#9370db');
+  const [bgColor, setBgColor] = useState('#00ff00');
+  // const [selectedArrow, setSelectedArrow] = useState('dot-fill');
   const [selectedArrow, setSelectedArrow] = useState('dot-fill');
   const [minRssiDevice, setMinRssiDevice] = useState({
     rssi: 0,
     major: 0,
     minor: 0,
   });
-  const [text, setText] = useState('ACİL ÇIKIŞ');
-
+  // const [text, setText] = useState('ACİL ÇIKIŞ');
+  const [text, setText] = useState('Tebrikler Acil Çıkışa Ulaştınız');
   const routing = useCallback(() => {
     for (const element of routes) {
       if (
@@ -41,7 +38,6 @@ export const AcilCikisProvider = props => {
         setText(element.nextText);
         setSelectedArrow(element.nextDirection);
         setBgColor('blue');
-
         if (
           element.nextMajor === minRssiDevice.major &&
           element.nextMinor === minRssiDevice.minor
@@ -54,13 +50,11 @@ export const AcilCikisProvider = props => {
       }
     }
   }, [minRssiDevice]);
-
   useEffect(() => {
     if (minRssiDevice.rssi !== 0 ) {
       routing();
     }
   }, [minRssiDevice, routing]);
-
   const setBleData = useCallback((rssi, major, minor) => {
     if (
       (minRssiDevice.rssi === 0 || Math.abs(rssi) < Math.abs(minRssiDevice.rssi)) &&
@@ -96,6 +90,7 @@ export const AcilCikisProvider = props => {
         const minor = advertisingData[23];
   
         setBleData(rssi, major, minor);
+        console.log(minRssiDevice);
       });
     }, [setBleData]);
   
@@ -104,6 +99,7 @@ export const AcilCikisProvider = props => {
     }, [minRssiDevice]);
   
     const handleButtonPressAcil = useCallback(() => {
+      console.log("basıldı");
       scanForDevices();
     }, [scanForDevices]);
   
@@ -130,4 +126,3 @@ export const AcilCikisProvider = props => {
   };
   
   export default AcilCikisProvider;
-  

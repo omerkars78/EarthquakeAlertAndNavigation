@@ -10,7 +10,7 @@ import {BleManager} from 'react-native-ble-plx';
 import RNFetchBlob from 'rn-fetch-blob';
 import {stringToBytes} from 'convert-string';
 import Db from '../db/db.js';
-import DbNavigate from '../db/db_navigate.js';
+
 
 async function requestBluetoothPermission() {
   try {
@@ -36,7 +36,7 @@ async function requestBluetoothPermission() {
 const manager = new BleManager();
 const defaultDeviceName = 'POI';
 const defaultDeviceRssi = -1;
-const dbInstance = new DbNavigate();
+const dbInstance = new Db();
 
 
 // Bluetooh İzinleri Kontrol Ederiz
