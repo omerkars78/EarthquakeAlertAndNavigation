@@ -18,8 +18,8 @@ export const AcilCikisProvider = props => {
   const [buttonText, setButtonText] = useState('Rota Oluştur');
   const [buttonBgColor, setButtonBgColor] = useState('white');
   const [buttonTextColor, setButtonTextColor] = useState('black');
-  // const [bgColor, setBgColor] = useState('#9370db');
-  const [bgColor, setBgColor] = useState('#00ff00');
+  const [bgColor, setBgColor] = useState('#9370db');
+  // const [bgColor, setBgColor] = useState('#00ff00');
   // const [selectedArrow, setSelectedArrow] = useState('dot-fill');
   const [selectedArrow, setSelectedArrow] = useState('dot-fill');
   const [minRssiDevice, setMinRssiDevice] = useState({
@@ -28,7 +28,7 @@ export const AcilCikisProvider = props => {
     minor: 0,
   });
   // const [text, setText] = useState('ACİL ÇIKIŞ');
-  const [text, setText] = useState('Tebrikler Acil Çıkışa Ulaştınız');
+  const [text, setText] = useState('ACİL ÇIKIŞ');
   const routing = useCallback(() => {
     for (const element of routes) {
       if (

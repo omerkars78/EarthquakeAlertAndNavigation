@@ -65,8 +65,9 @@ export const department = [
   {name: 'Lütfen varış Yeri Seçiniz', major: '0', minor: '0'},
   {name: 'Vahap Tecim', major: '4', minor: '102'},
   {name: 'Ybs Sekreterlik', major: '4', minor: '103'},
-  {name: 'Ybs Öğrenci İşleri', major: '4', minor: '104'},
+  {name: 'Deneme', major: '1', minor: '40'},
 ];
+
 
 export const arrow = [
   {name: 'dot-fill'},
@@ -80,8 +81,8 @@ export const arrow = [
 ];
 
 export const GlobalProvider = props => {
-  const [bgColor, setBgColor] = useState('#9370db');
-
+  const [bgColor, setBgColor] = useState('#ff7800');
+  // const [bgColor, setBgColor] = useState('#0000ff');
   const [selected, setSelected] = useState(department[0]);
   const [selectedArrow, setSelectedArrow] = useState(arrow[0].name);
   const [minRssiDevice, setMinRssiDevice] = useState({
@@ -90,7 +91,7 @@ export const GlobalProvider = props => {
     minor: 0,
   });
   const [text, setText] = useState('Hoşgeldiniz Lütfen Hedefinizi Seçiniz');
- 
+
   let startMajor = String(minRssiDevice.major);
   let startMinor = String(minRssiDevice.minor);
   let finishMajor = String(selected.major);
@@ -107,9 +108,8 @@ export const GlobalProvider = props => {
   const [restartApp, setRestartApp] = useState(false);
   const intervalIdRef = useRef(null);
   const [isRoutingRunning, setIsRoutingRunning] = useState(false);
+  const [isScanning, setIsScanning] = useState(false);
 
-
-  // Yönlendirme İşlemini Yapıyoruz 
   const routing = useCallback(() => {
     setIsRoutingRunning(true);
     for (const element of matchedDataRef.current) {
@@ -121,28 +121,26 @@ export const GlobalProvider = props => {
         setText(element.nextText);
         setSelectedArrow(element.nextDirection);
         setBgColor('blue');
-  
-        if (
-          element.finishMajor.toString() === minRssiDevice.major.toString() &&
-          element.finishMinor.toString() === minRssiDevice.minor.toString()
-        ) {
-          console.log('yönlendirme başarılı');
-          setText('Hedefe Ulaştınız');
-          setSelectedArrow('dot-fill');
-          setBgColor('#00c957');
-          break;
-        }
+      }
+      if (
+        element.finishMajor.toString() === minRssiDevice.major.toString() &&
+        element.finishMinor.toString() === minRssiDevice.minor.toString()
+      ) {
+        console.log('yönlendirme başarılı');
+        setText('Hedefe Ulaştınız');
+        setSelectedArrow('dot-fill');
+        setBgColor('#00c957');
+        break;
       }
     }
   }, [minRssiDevice]);
-  
- 
+
   // Hedefe ulaştıktan sonra 3 saniye bekleyip uygulamayı yeniden başlatan useEffect
   useEffect(() => {
     if (setText === 'Hedefe Ulaştınız' || bgColor === '#00c957') {
       setTimeout(() => {
         setRestartApp(true);
-      }, 3000);
+      }, 1500);
     }
   });
 
@@ -153,11 +151,11 @@ export const GlobalProvider = props => {
     setSelected(department[0]);
     setText('Hoşgeldiniz Lütfen Hedefinizi Seçiniz');
     setSelectedArrow(arrow[0].name);
-    setBgColor('#9370db');
+    setBgColor('ff7800');
+    setIsDepartmentSelected(false);
     setRestartApp(false);
-    AuthOnPress();
-    setIsRoutingRunning(false); // Durum değerini false olarak ayarlayın
-    
+    stopScanning();
+    setIsRoutingRunning(false);
   }
 
   // Yeniden Başlatma İşlemlerini Yapan useEffect
@@ -168,16 +166,13 @@ export const GlobalProvider = props => {
       setSelected(department[0]);
       setText('Hoşgeldiniz Lütfen Hedefinizi Seçiniz');
       setSelectedArrow(arrow[0].name);
-      setBgColor('#0000ff');
+      setBgColor('ff7800');
       setIsDepartmentSelected(false);
       setRestartApp(false);
-      AuthOnPress();
+      stopScanning();
       setIsRoutingRunning(false);
-      // console.log(restartApp);
-      // console.log(isDepartmentSelected);
     }
   }, [restartApp, manager, AuthOnPress]);
-
 
   function setBleData(rssi, major, minor) {
     if (
@@ -186,28 +181,27 @@ export const GlobalProvider = props => {
       rssi > -15
     ) {
       setMinRssiDevice({rssi, major, minor});
-    } else if (
-      Math.abs(rssi) === Math.abs(minRssiDevice.rssi) &&
-      rssi > -15
-    ) {
+    } else if (Math.abs(rssi) === Math.abs(minRssiDevice.rssi) && rssi > -15) {
       setMinRssiDevice({rssi, major, minor});
     } else if (
-      Math.abs(rssi - minRssiDevice.rssi) > 15 &&
+      Math.abs(rssi - minRssiDevice.rssi) > 50 &&
       Math.abs(rssi) < Math.abs(minRssiDevice.rssi) &&
       rssi > -15
     ) {
       setMinRssiDevice({rssi, major, minor});
     }
   }
-  
- // minRssiDevice güncellendiğinde routing fonksiyonunu çağıran useEffect
+
+  // minRssiDevice güncellendiğinde routing fonksiyonunu çağıran useEffect
   useEffect(() => {
     if (minRssiDevice.rssi !== 0 && isDepartmentSelected) {
+      console.log('Before routing:', matchedDataRef.current);
       routing();
+      console.log('After routing:', matchedDataRef.current);
     }
   }, [minRssiDevice, routing, isDepartmentSelected]);
 
-  // Tarama işlerini bir saniyede bir yapacağımız fonksiyon 
+  // Tarama işlerini bir saniyede bir yapacağımız fonksiyon
   function debounce(fn, delay) {
     let timeoutId;
     return function (...args) {
@@ -219,44 +213,69 @@ export const GlobalProvider = props => {
       }, delay);
     };
   }
-  // Tarama İşlemlerini Yapan Fonksiyon
+
+  // // Tarama İşlemlerini Yapan Fonksiyon
+  // const scanForDevices = useCallback(async () => {
+  //   const isPermissionGranted = await requestPermissions();
+
+  //   if (isPermissionGranted) {
+  //     console.log('Permissions are granted. Starting scanning...');
+
+  //     let deviceFound = false;
+
+  //     manager.startDeviceScan(null, null, (error, device) => {
+  //       if (error) {
+  //         console.log(error);
+  //         // Hata mesajınız
+  //         return;
+  //       }
+  //       else if (device.localName === defaultDeviceName) {
+  //         deviceFound = true;
+
+  //         const base64 = RNFetchBlob.base64;
+  //         const advertisingData = stringToBytes(
+  //           base64.decode(device.manufacturerData),
+  //         );
+  //         const rssi = device.rssi;
+  //         const major = advertisingData[21];
+  //         const minor = advertisingData[23];
+
+  //         setBleData(rssi, major, minor);
+  //         console.log(major, minor, rssi);
+  //         // console.log(matchedDataRef.current);
+  //       }
+  //     });
+
+  //     console.log('scanForDevices çalıştı');
+  //   } else {
+  //     console.log('İzin sorunu var çalışmıyor.');
+  //   }
+  // }, [setBleData]);
+
   const scanForDevices = useCallback(() => {
-    const debouncedScan = debounce(() => {
-      let deviceFound = false;
-  
-      manager.stopDeviceScan(); // Taramayı durdurun
-      manager.startDeviceScan(null, null, (error, device) => {
-        if (error) {
-          console.log(error);
-          Alert.alert(
-            'Error',
-            'Lütfen bluetoothunuzu açıp kapatınız ve uygulamayı yeniden başlatınız',
-            [{text: 'OK', onPress: () => console.log('OK Pressed')}],
-            {cancelable: false},
-          );
-          return;
-        }
-        if (device.localName === defaultDeviceName) {
-          deviceFound = true;
-  
-          const base64 = RNFetchBlob.base64;
-          const advertisingData = stringToBytes(
-            base64.decode(device.manufacturerData),
-          );
-          const rssi = device.rssi;
-          const major = advertisingData[21];
-          const minor = advertisingData[23];
-  
-          setBleData(rssi, major, minor);
-  
-          console.log(matchedDataRef.current);
-        }
-      });
-  
-      console.log('scanForDevices is finished');
-    }, 500);
-  
-    debouncedScan();
+    let deviceFound = false;
+
+    manager.startDeviceScan(null, null, (error, device) => {
+      if (error) {
+        console.log(error);
+        // Hata mesajınız
+        return;
+      } else if (device.localName === defaultDeviceName) {
+        deviceFound = true;
+
+        const base64 = RNFetchBlob.base64;
+        const advertisingData = stringToBytes(
+          base64.decode(device.manufacturerData),
+        );
+        const rssi = device.rssi;
+        const major = advertisingData[21];
+        const minor = advertisingData[23];
+
+        setBleData(rssi, major, minor);
+
+        console.log(matchedDataRef.current);
+      }
+    });
   }, [setBleData]);
 
   // minRssidevice güncellenmiş değerlerini görmemize yarayan useEffect
@@ -282,18 +301,19 @@ export const GlobalProvider = props => {
   // Eşleşen verileri getiren fonksiyon
   useEffect(() => {
     async function fetchMatchedData() {
-      if (isRoutingRunning) { // isRoutingRunning durumunu kontrol edin
-        const datas = await dbInstance.searchMatchedData(
-          startMajor,
-          startMinor,
-          finishMajor,
-          finishMinor,
-        );
-        setMatchedData(datas);
+      const datas = await dbInstance.searchMatchedData(
+        startMajor,
+        startMinor,
+        finishMajor,
+        finishMinor,
+      );
+      if (datas.length > 0) {
+        // Eğer gelen veri dolu bir array ise
+        setMatchedData(datas); // state'i güncelle
       }
     }
     fetchMatchedData();
-  }, [minRssiDevice,isRoutingRunning]);
+  }, [minRssiDevice]);
 
   // Bizi İlgilendiren Veri kümesini tutan useRef
   useEffect(() => {
@@ -303,15 +323,22 @@ export const GlobalProvider = props => {
   // Bir yer seçildiğinde o yere gitmemizi sağlayan fonksiyon
   const AuthOnPress = useCallback(() => {
     console.log('AuthOnPress is called');
-    if (isDepartmentSelected && !isRoutingRunning) { // Durum değeri false ise koşula girin
-      console.log('AuthOnPress is called koşula giriyor');
+    if (isDepartmentSelected && !isScanning) {
+      console.log('AuthOnPress is called and enters the condition');
+      setIsScanning(true);
       intervalIdRef.current = setInterval(() => {
         scanForDevices();
-  
-      }, 500);
-      setIsRoutingRunning(true);
+
+      }, 3000);
     }
-  }, [isDepartmentSelected, isRoutingRunning]);
+  }, [isDepartmentSelected, isScanning]);
+
+  const stopScanning = useCallback(() => {
+    if (intervalIdRef.current) {
+      clearInterval(intervalIdRef.current);
+      setIsScanning(false);
+    }
+  }, []);
 
   // Button.js te butonumuza bağlı olan fonksiyon
   const handleButtonPress = useCallback(() => {
@@ -319,10 +346,8 @@ export const GlobalProvider = props => {
       alert('Please select a department.');
     } else {
       AuthOnPress();
-
     }
   }, [isDepartmentSelected, AuthOnPress]);
-  
 
   return (
     <GlobalSelectContext.Provider
@@ -351,7 +376,7 @@ export const GlobalProvider = props => {
         setButtonBgColor,
         setButtonText,
         setButtonTextColor,
-        requestBluetoothPermission
+        requestPermissions,
       }}>
       {props.children}
     </GlobalSelectContext.Provider>

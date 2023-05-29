@@ -1,7 +1,7 @@
 import io from 'socket.io-client';
 
 
-const SERVER_URL = 'http://192.168.1.53:5000';
+const SERVER_URL = 'http://194.27.64.139:5000';
 
 class WebSocketService {
   socket = null;
