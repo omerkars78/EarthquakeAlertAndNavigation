@@ -6,11 +6,12 @@ app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")  # Add SocketIO support
 
 cnx = mysql.connector.connect(
-    host="127.0.0.1",
+    host="localhost",
     user="root",
-    password="",
+    password="oMerkars78a",
     database="vib_sensor"
 )
+
 
 @app.route("/api/titresim_verileri", methods=["GET"])
 def get_titresim_verileri():
@@ -24,17 +25,6 @@ def get_titresim_verileri():
         veriler.append({"id": row[0], "tarih_saat": row[1], "signals": row[2]})
     return jsonify(veriler)
 
-# @app.route("/api/titresim_verileri", methods=["POST"])
-# def post_titresim_verileri():
-#     signal = request.json["signals"]
-#     tarih_saat = time.strftime("%Y-%m-%d %H:%M:%S")
-
-#     cursor = cnx.cursor()
-#     sorgu = "INSERT INTO titresim_verileri (tarih_saat, signals) VALUES (%s, %s)"
-#     cursor.execute(sorgu, (tarih_saat, signal))
-#     cnx.commit()
-
-#     return jsonify({"status": "success"})
 @app.route("/api/titresim_verileri", methods=["POST"])
 def post_titresim_verileri():
     signal = request.json["signals"]
@@ -51,5 +41,7 @@ def post_titresim_verileri():
 
 
 
+
 if __name__ == "__main__":
-    app.run(host="194.27.64.139", port=5000)
+    app.run(host="0.0.0.0", port=5000)
+

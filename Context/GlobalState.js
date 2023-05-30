@@ -81,7 +81,7 @@ export const arrow = [
 ];
 
 export const GlobalProvider = props => {
-  const [bgColor, setBgColor] = useState('#ff7800');
+  const [bgColor, setBgColor] = useState('#9370db');
   // const [bgColor, setBgColor] = useState('#0000ff');
   const [selected, setSelected] = useState(department[0]);
   const [selectedArrow, setSelectedArrow] = useState(arrow[0].name);
@@ -376,7 +376,7 @@ export const GlobalProvider = props => {
         setButtonBgColor,
         setButtonText,
         setButtonTextColor,
-        requestPermissions,
+      
       }}>
       {props.children}
     </GlobalSelectContext.Provider>
