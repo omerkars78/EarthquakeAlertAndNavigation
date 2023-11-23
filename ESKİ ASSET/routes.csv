@@ -1,5 +1,0 @@
-mainRouteId,curMajor,curMinor,nextMajor,nextMinor,nextDirection,nextDistance,beforeMajor,beforeMinor,beforeDirection,beforeDistance,nextText
-1,0,1,0,2,arrow-up,10.0,0,0,dot-fill,0.0,5 metre düz ilerleyin
-1,0,2,1,10,arrow-left,10.0,0,1,arrow-up,10.0,Sağa dönün sonra sola dönün
-1,1,10,1,40,arrow-left,10.0,0,2,arrow-up,2.0,İki metre ilerleyin
-1,1,40,0,0,dot-fill,0.0,1,10,arrow-up,2.0,hedefe vardınız

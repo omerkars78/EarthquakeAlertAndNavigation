@@ -1,6 +1,0 @@
-[
-    { "startMajor":"0", "startMinor": "1", "finishMajor": "4", "finishMinor": "102" },
-    { "startMajor": "0", "startMinor": "1", "finishMajor": "4", "finishMinor": "103" },
-    { "startMajor": "4", "startMinor": "102", "finishMajor":"4", "finishMinor": "103" },
-    {"startMajor": "1","startMinor": "21","finishMajor": "1","finishMinor": "40"}
-]
